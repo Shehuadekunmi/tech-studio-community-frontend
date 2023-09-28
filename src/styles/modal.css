@@ -1,0 +1,46 @@
+.background-holder{
+  background-color: var(--primary);
+  height: 80px;
+  padding: 15px;
+}
+.background-holder img{
+    height: 50px;
+    width: 50px;
+}
+.Writeup h2{
+    font-family: var(--font-family);
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 700;
+letter-spacing: 0.96px;
+text-transform: capitalize;
+}
+.Writeup p{
+    font-family: var(--font-family);
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.Writeup button{
+    background-color:var(--primary);
+    border-radius: 10px;
+    padding: 5px 33px;
+    color: var(--bg2);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 700;
+}
+.Writeup button:hover{
+    cursor: pointer;
+    background-color: #0266F4;
+    color: var(--bg2);
+    font-weight: 700;
+    text-transform: capitalize;
+    border: solid #0266F4;
+}
+@media (min-width:760px) {
+   .work{
+    width: 500px;
+    margin: auto;
+   } 
+}
