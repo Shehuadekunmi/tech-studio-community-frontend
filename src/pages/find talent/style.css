@@ -1,0 +1,283 @@
+.one h1 {
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.one p {
+    color: var(--secondry);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form {
+    background-color: var(--bg);
+}
+.sec22{
+    background-color: var(--bg);
+
+}
+.form form,
+.form1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 5px;
+    background: var(--White-text, #FFF);
+    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.10);
+    z-index: 2 !important;
+}
+
+.form img {
+    position: relative;
+    top: -120px;
+    left: 160px;
+    z-index: 0 !important;
+}
+
+.form input,
+.form1 input {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid #BABABA;
+    height: 40px;
+}
+
+.button {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 100%;
+}
+
+.for {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* section1 b */
+.two {
+    background-color: var(--bg2);
+    height: 100%;
+    padding: 30px 0px;
+}
+
+.two h1 {
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.do {
+    border-radius: 5px;
+    background: var(--White-text, #FFF);
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.10);
+}
+
+.do img {
+    margin-top: 20px;
+}
+
+.two h2 {
+    border: 2px solid darkblue;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 5px 0px;
+}
+
+/* section 2 */
+.sec21 {
+    border: 2px solid aliceblue;
+}
+
+.sec21 h1 {
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: 32px;
+    padding: 10px 0px;
+    font-weight: 700
+}
+
+.sec21 h2 {
+    color: #000;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+
+.sec21 p {
+    color: var(--Body-Text-Color, #1E1E1E);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.sec21 img {
+    margin: 10px auto;
+}
+
+.text1 h2 {
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text1 p {
+    color: var(--Body-Text-Color, #1E1E1E);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+@media (min-width:760px) {
+
+    .text,
+    .form {
+        width: 45%;
+    }
+
+    .form img {
+        left: 195px;
+    }
+
+    .do {
+        width: 40%;
+    }
+
+    .hire {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .text1,
+    .form1 {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .text1 {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width:900px) {
+    .form {
+        height: 600px;
+    }
+
+    .for {
+        width: 70%;
+        height: 300px;
+        margin: 160px auto;
+    }
+
+    .for form {
+        height: 300px;
+        margin-top: -14px;
+    }
+
+    .form img {
+        left: 430px;
+        top: -245px;
+    }
+
+    .text {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .text h1 {
+        width: 80%;
+    }
+
+    .text p {
+        width: 505px;
+        line-height: 30px;
+    }
+
+    .do {
+        width: 320px;
+        height: 320px;
+    }
+
+    .do p,
+    .do h2 {
+        text-align: justify;
+        padding: 10px;
+        width: 280px;
+        margin: 0 auto;
+    }
+
+    .do img {
+        border: 2px solid firebrick;
+        text-align: justify;
+        align-items: start;
+        margin-left: 20px;
+        display: flex;
+    }
+
+    .two h1 {
+        font-size: 33px;
+    }
+
+    .hire {
+        width: 27%;
+    }
+
+    .sec21 h2,
+    .sec21 p {
+        text-align: justify;
+    }
+
+    .sec21 img {
+        border: 1px solid lawngreen;
+        text-align: justify;
+        align-items: start;
+        margin-left: 0px;
+        display: flex;
+    }
+
+    .sec21 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .sp {
+        margin-left: 40px;
+    }
+
+    .sp1 {
+        margin-right: 460px;
+    }
+
+    .form1{
+        height:500px;
+    }
+    .text1 p, .text1 h2{
+        width: 500px;
+        text-align: justify;
+    }
+}
