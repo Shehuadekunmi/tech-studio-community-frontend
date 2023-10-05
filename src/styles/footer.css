@@ -1,0 +1,148 @@
+.footer-division{
+background-color:var(--primary);
+ width: 100%;
+}
+.Child-division{
+  display: flex;
+    justify-content: space-evenly;
+}
+
+.Master p{
+ width: 280px;
+ color: #FFF;
+  font-family: var(--opensans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding-top: 1rem;
+}
+
+.menu-list b {
+ color: #fff;
+ font-family: var(--font-family);
+ font-size: 1rem;
+ font-style: normal;
+ font-weight: 700;
+}
+.menu-list p {
+ color: #FFF;
+ font-family: var(--font-family);
+ margin-top: 5px;
+ font-size: 0.8rem;
+ font-style: normal;
+ font-weight: 400;
+ margin-top:1rem;
+}
+
+
+
+.news-part h3{
+ color: #FDFEFF;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.news-part input{
+  width: 320px;
+    height: 39px;
+    padding-left: 10px;
+    border: none;
+      border-radius: 5px;
+margin-top: 1rem;
+}
+.news-part input::placeholder{
+      font-family: var(--font-family);
+font-weight: 400;
+font-size: 1rem;
+}
+.news-part button{
+  width: 108px;
+    height: 29px;
+    font-family: var(--font-family);
+    border-radius: 5px;
+      background-color: #0086B0;
+      color: white;
+  border: none;
+  margin-left: -125px;
+  font-weight: 400;
+  margin-top: 1.3rem ;
+  cursor: pointer;
+}
+.news-part button:hover{
+    background-color: #fff;
+    font-size: 1rem;
+    color: var(--primary);
+    border: 2px solid black;
+    color: var(--primary);
+    font-weight: 700;
+}
+.Policy b{
+  color: #fff;
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 9px;
+}
+.Policy p{
+  color: #fff;
+ font-size: 1rem;
+ margin-left: 20px;
+}
+
+.footer-division hr{
+ height: 10px;
+ width: auto;
+color: #fff;
+}
+
+@media (max-width:768px ) {
+  .Child-division {
+ flex-wrap: wrap;
+    }
+    .news-part input{
+      width: 258px;
+      margin-right: 20px;
+    }
+    .news-part button{ 
+        width: 100px;
+        font-size: 0.8rem;
+    }
+    .Master p{
+      width: 280px;
+    }
+   
+    .menu-list b{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:500px) {
+  .Master img{
+    padding-inline: 10px;
+  }
+  .Master p{
+    width: 270px;
+    padding-inline: 1rem;
+  }
+  .news-part{
+    width: 400px;
+    margin-left: 30px;
+  }
+  .menu-list{
+    position: relative;
+    right: 24%;
+  }
+}
+@media(max-width: 425px) {
+  .Master{
+    margin-right:20px ;
+  }
+}
+@media (max-width:320px) {
+  .news-part input,button,h3{
+    margin-left: -6%;
+  }
+}

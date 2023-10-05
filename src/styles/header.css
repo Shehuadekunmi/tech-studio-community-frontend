@@ -1,0 +1,9 @@
+.Head{
+    background-color: var(--primary);
+}
+.Part-2 {
+    display: flex;
+}
+.tag{
+    font-family: var(--font-family);
+}

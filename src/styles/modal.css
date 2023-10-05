@@ -3,6 +3,9 @@
   height: 80px;
   padding: 15px;
 }
+.work{
+    height: 100vh;
+}
 .background-holder img{
     height: 50px;
     width: 50px;
@@ -42,5 +45,6 @@ text-transform: capitalize;
    .work{
     width: 500px;
     margin: auto;
+    height: 50vh;
    } 
 }
