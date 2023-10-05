@@ -1,4 +1,3 @@
-import React from 'react'
 import './style.css'
 import FindtalentSec1 from '../../components/FindtalentSec1'
 import FindtalentSec2 from '../../components/FindtalentSec2'
