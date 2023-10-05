@@ -1,0 +1,19 @@
+.filter h3{
+color: var(--black);
+ font-family: var(--Open-Sans);
+ font-size: 1rem;
+ font-weight: 700;
+}
+.filter select{
+ border-radius: 5px;
+  border: 1px solid rgba(30, 30, 30, 0.50);
+  outline: none;
+  color: var(--black);
+   text-align: center;
+   font-family: var(--Open-Sans);
+   font-size: 0.80rem;
+   font-weight: 600;
+   line-height: 150%;
+   letter-spacing: 0.36px;
+   text-transform: capitalize;
+}
