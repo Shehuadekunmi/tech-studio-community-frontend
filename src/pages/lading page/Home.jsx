@@ -1,6 +1,5 @@
-import React from 'react'
-import Hero from '../../components/Hero'
-import { Container } from 'react-bootstrap'
+import Hero from "../../components/Hero";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -10,6 +9,6 @@ const Home = () => {
       </Container>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
