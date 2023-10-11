@@ -1,0 +1,75 @@
+.job-body-main{
+  /* height: 2633px; */
+  background: #f9f9f9;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.header-body{
+    display: flex;
+    gap: 260px;
+
+}
+
+.card-main-body {
+  /* display: inline-flex; */
+  /* padding-top: 80px; */
+  /* height: 1241px; */
+  /* flex-direction: column; */
+  align-items: center;
+  /* gap: 80px; */
+  border-radius: 5px;
+  border-top: 12px solid #0266f4;
+  background: #fff;
+  box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.15);
+  /* border: none; */
+  /* width: 1241px; */
+}
+
+card{
+    /* border-top: 20px solid #0266f4; */
+}
+
+.button-main {
+  background: #f9f9f9;
+  display: flex;
+  /* padding: 20px 106px 20px 982px; */
+  /* flex-direction: row; */
+  justify-content: end;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the selected item */
+  .select-selected {
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Style for the dropdown options */
+  .select-items {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .select-items div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Show the options when the select is clicked */
+  .custom-select.open .select-items {
+    display: block;
+  }
+  
