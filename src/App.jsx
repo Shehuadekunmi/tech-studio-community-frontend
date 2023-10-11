@@ -1,10 +1,8 @@
 import JobRequirements from './pages/JobRequirements'
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-import './App.css'
-import Index from './pages/find talent/Talent'
-// fix this route link,  route path should not be  "/Index"
-
+import Home from './pages/lading page/Home'
+import Talent from './pages/find talent/Talent'
 
 function App() {
 
@@ -12,8 +10,10 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Index/>}/>
+          <Route path='/' element={<Home/>}/>
           <Route path='/jobrequirement' element={<JobRequirements/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/talent" element={<Talent />} />
         </Routes>
       </Router>
     </>
