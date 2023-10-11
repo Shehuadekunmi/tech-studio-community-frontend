@@ -3,6 +3,7 @@ import { Card, Button, Form } from "react-bootstrap";
 import backwardArrow from '../assets/backwardarrow.svg'
 
 export default function JobRequirements() {
+
   return (
     <div className="job-body-main">
       <div className="job-body container">

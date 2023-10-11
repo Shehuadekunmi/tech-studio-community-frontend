@@ -26,9 +26,9 @@
   /* width: 1241px; */
 }
 
-card{
+/* card{ */
     /* border-top: 20px solid #0266f4; */
-}
+/* } */
 
 .button-main {
   background: #f9f9f9;
@@ -73,3 +73,7 @@ card{
     display: block;
   }
   
+option{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
