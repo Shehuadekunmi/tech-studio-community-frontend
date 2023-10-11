@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import dot from '../assets/dot.svg'
 import can from '../assets/can.svg'
