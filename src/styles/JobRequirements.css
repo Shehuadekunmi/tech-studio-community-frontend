@@ -1,0 +1,130 @@
+.job-body-main{
+  /* height: 2633px; */
+  background: #f9f9f9;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.header-body{
+    display: flex;
+    gap: 260px;
+
+}
+
+.card-main-body {
+  /* display: inline-flex; */
+  /* padding-top: 80px; */
+  /* height: 1241px; */
+  /* flex-direction: column; */
+  align-items: center;
+  /* gap: 80px; */
+  border-radius: 5px;
+  border-top: 12px solid #0266f4;
+  background: #fff;
+  box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.15);
+  /* border: none; */
+  /* width: 1241px; */
+}
+
+/* card{ */
+    /* border-top: 20px solid #0266f4; */
+/* } */
+
+.button-main {
+  background: #f9f9f9;
+  display: flex;
+  /* padding: 20px 106px 20px 982px; */
+  /* flex-direction: row; */
+  justify-content: end;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the selected item */
+  .select-selected {
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Style for the dropdown options */
+  .select-items {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .select-items div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Show the options when the select is clicked */
+  .custom-select.open .select-items {
+    display: block;
+  }
+  
+option{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+
+
+
+.choice-con{
+  display: flex;
+  width: 95%;
+  /* justify-content: space-between; */
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.checked-icon{
+  display: none;
+  
+}
+
+.choice-input{
+  width: 100% !important;
+}
+
+.plus-btn{
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+.input-con{
+  position: relative;
+}
+
+.checked-text{
+  background-color: rgba(186, 186, 186, 1);
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.checked-icon:checked + .checked-text {
+  background-color: black !important;
+}
+.multiple-choice{
+  width: 50%;
+}
