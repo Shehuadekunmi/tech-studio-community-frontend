@@ -104,7 +104,7 @@ const GuestSignUp = () => {
             >
               <div className="guest-name d-lg-flex justify-content-between">
                 <div className="sign-up-first-name d-flex flex-column gap-3">
-                  {errors.firstname && <p>{errors.firstname}</p>}
+                  {/* {errors.firstname && <p>{errors.firstname}</p>} */}
                   <label htmlFor="first-name">First Name</label>
                   <input
                     className="px-3"
