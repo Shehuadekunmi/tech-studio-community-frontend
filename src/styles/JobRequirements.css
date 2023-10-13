@@ -79,18 +79,54 @@ option{
 }
 
 .job-title-input{
-  /* display: inline-flex; */
-padding: 20px 259px 20px 15px;
-/* justify-content: center; */
-/* align-items: center; */
-gap: 10px;
+padding: 20px 229px 20px 15px;
 border-radius: 5px;
 border: 1px solid #BABABA;
-width: 259px;
+/* width: 259px; */
 /* outline: none; */
-/* border: none; */
 }
 
+.job-title-input::placeholder{
+  color: #1E1E1E;
+/* leading-trim: both; */
+/* text-edge: cap; */
+font-family: 'Open Sans', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; 
+}
+
+.job-location-input{
+padding: 20px 229px 20px 15px;
+border-radius: 5px;
+border: 1px solid #BABABA;
+/* outline: none; */
+}
+
+.job-location-input::placeholder{
+  color: #1E1E1E;
+/* leading-trim: both; */
+/* text-edge: cap; */
+font-family: 'Open Sans', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; 
+}
+
+.job-description-input{
+padding: 20px 740px 300px 15px;
+border-radius: 5px;
+border: 1px solid #BABABA;
+}
+
+.minimum-qualification-input{
+/* padding: 20px 740px 300px 15px; */
+width: 740px;
+border-radius: 5px;
+border: 1px solid #BABABA;
+}
 
 .choice-con{
   display: flex;

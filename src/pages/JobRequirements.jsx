@@ -4,7 +4,7 @@ import backwardArrow from '../assets/backwardarrow.svg'
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MultipleChoiceInput from "../Components/Choice";
-import Loader from "../Components/Loader"
+// import spinner from "../Components/Loader"
 
 export default function JobRequirements({jobPosterData}) {
   const navigate =useNavigate()
@@ -192,12 +192,12 @@ export default function JobRequirements({jobPosterData}) {
                         <strong>Job title</strong>
                       </h6>
                     </Form.Label>
-                    <Form.Control
+                    <input
                       type="text"
                       name="jobTitle"
                       value={formData.jobTitle}
                       placeholder="Enter job title for this job post"
-                      className={`w-100 ${formErrors.jobTitle && "error"}`}
+                      className={`w-100 h-100 ${formErrors.jobTitle && "error"} job-title-input`}
                       onChange={handleFieldChange}
                     />
                     {formErrors.jobTitle && (
@@ -212,12 +212,12 @@ export default function JobRequirements({jobPosterData}) {
                         <strong>Job location</strong>
                       </h6>
                     </Form.Label>
-                    <Form.Control
+                    <input
                       type="text"
                       name="jobLocation"
                       value={formData.jobLocation}
                       onChange={handleFieldChange}
-                      className={`w-100 ${formErrors.jobLocation && "error"}`}
+                      className={`w-100 h-100 ${formErrors.jobLocation && "error"} job-location-input`}
                       placeholder="Enter job location for this job post"
                     />
                     {formErrors.jobLocation && (
@@ -291,13 +291,14 @@ export default function JobRequirements({jobPosterData}) {
                       <strong>Job Description</strong>
                     </h6>
                   </Form.Label>
-                  <Form.Control
+                  <br />
+                  <input
                     type="text"
                     name="jobDescription"
                     value={formData.jobDescription}
                     onChange={handleFieldChange}
                     placeholder="Enter the title of position you want to fill"
-                    className={` ${formErrors.jobDescription && "error"}`}
+                    className={` ${formErrors.jobDescription && "error"} job-description-input`}
                   />
                   {formErrors.jobDescription && (
                   <small className="text-danger">{formErrors.jobDescription}</small>)}
@@ -309,12 +310,13 @@ export default function JobRequirements({jobPosterData}) {
                       <strong>Minimum Qualification</strong>
                     </h6>
                   </Form.Label>
-                  <Form.Control
+                  <br />
+                  <input
                     type="text"
                     name="minimumQualification"
                     value={formData.minimumQualification}
                     onChange={handleFieldChange}
-                    className={` ${formErrors.minimumQualification && "error"}`}
+                    className={` ${formErrors.minimumQualification && "error"} minimum-qualification-input`}
                     placeholder="Enter the minimum level of qualification for the position you are hiring for"
                   />
                   {formErrors.minimumQualification && (
@@ -347,7 +349,7 @@ export default function JobRequirements({jobPosterData}) {
                  value={formData.responsibilities}
                  onChange={handleFieldChange}
                  className={` ${formErrors.responsibilities && "error"}`}
-                  placeholder="Enter the list of responsibilities accompanying the positin"
+                  placeholder="Enter the list of responsibilities accompanying the position"
                 />
                 {formErrors.responsibilities && (
           <small className="text-danger">{formErrors.responsibilities}</small>)}
@@ -414,7 +416,7 @@ export default function JobRequirements({jobPosterData}) {
             </Button>
             </Link>
 
-            <div className="button"> <button className='btn btn-primary' type='submit'>{loading?<Loader/>:'Submit'}</button> </div> 
+            <div className="button"> <button className='btn btn-primary' type='submit'>Submit</button> </div> 
               </div>
             </Form>
           </Card.Body>
