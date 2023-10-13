@@ -10,7 +10,6 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Home/>}/>
           <Route path='/jobrequirement' element={<JobRequirements/>} />
           <Route path="/" element={<Home />} />
           <Route path="/talent" element={<Talent />} />

@@ -29,7 +29,7 @@ export default function JobRequirements() {
                       type="text"
                       required
                       placeholder="Enter job title for this job post"
-                      className="w-100"
+                      className="w-100 job-title-input"
                     />
                   </Form.Group>
                 </div>

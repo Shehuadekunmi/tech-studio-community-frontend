@@ -77,3 +77,16 @@ option{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+
+.job-title-input{
+  /* display: inline-flex; */
+padding: 20px 259px 20px 15px;
+/* justify-content: center; */
+/* align-items: center; */
+gap: 10px;
+border-radius: 5px;
+border: 1px solid #BABABA;
+width: 259px;
+/* outline: none; */
+/* border: none; */
+}
