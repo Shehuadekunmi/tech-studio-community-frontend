@@ -90,3 +90,52 @@ width: 259px;
 /* outline: none; */
 /* border: none; */
 }
+
+
+.choice-con{
+  display: flex;
+  width: 95%;
+  /* justify-content: space-between; */
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.checked-icon{
+  display: none;
+  
+}
+
+.choice-input{
+  width: 100% !important;
+}
+
+.plus-btn{
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+.input-con{
+  position: relative;
+}
+
+.checked-text{
+  background-color: rgba(186, 186, 186, 1);
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.checked-icon:checked + .checked-text {
+  background-color: black !important;
+}
+.multiple-choice{
+  width: 50%;
+}
