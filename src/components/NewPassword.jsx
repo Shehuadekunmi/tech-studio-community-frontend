@@ -11,11 +11,14 @@ const NewPassword = () => {
   const [reveal, setReveal] = useState(false);
   const [reveal2, setReveal2] = useState(false);
   const [error, setError] = useState(false);
+  const [error2, setError2] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!newPassword && !confirmNewPassword) {
       setError(true);
+    } else if (confirmNewPassword !== newPassword) {
+      setError2(true);
     }
   }
 
@@ -35,7 +38,9 @@ const NewPassword = () => {
       </div>
       <div className="container">
         <div className="body">
-          <p>To reset your password, please enter a new password below.</p>
+          <p className="new-password-heading">
+            To reset your password, please enter a new password below.
+          </p>
           <form onSubmit={handleSubmit} className={error ? "error" : ""}>
             <div className="d-flex flex-column form-div">
               <label htmlFor="email">New Password</label>
@@ -79,6 +84,9 @@ const NewPassword = () => {
                 alt=""
               />
             </div>
+            {error2 && (
+              <p className="error-message">Both passwords must match!</p>
+            )}
             <button className="btn btn-primary">Reset Password</button>
           </form>
         </div>

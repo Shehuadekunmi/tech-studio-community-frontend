@@ -58,13 +58,11 @@ const GuestSignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!email || !firstname || !lastname || !password || !confirmPassword)
-      if (!email && !firstname && !lastname && !password && !confirmPassword) {
-        setError(true);
-      }
-
     const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
+
+    if (!email || !firstname || !lastname || !password || !confirmPassword) {
+      setError(true);
+    } else if (Object.keys(validationErrors).length === 0) {
       console.log("Form is valid");
     } else {
       setErrors(validationErrors);
@@ -181,6 +179,9 @@ const GuestSignUp = () => {
                   />
                 </div>
               </div>
+              {errors.confirmPassword && (
+                <p className="error-message">{errors.confirmPassword}</p>
+              )}
               {error && (
                 <p style={{ color: "red" }}>Please fill in all fields!</p>
               )}
