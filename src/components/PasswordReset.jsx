@@ -6,7 +6,6 @@ import { useState } from "react";
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
-//   const [error2, setError2] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();

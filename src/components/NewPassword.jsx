@@ -4,6 +4,7 @@ import "../styles/NewPassword.css";
 import { useState } from "react";
 import eyeclose from "../assets/eye-close.svg";
 import eyeopen from "../assets/eye-open.svg";
+import PasswordResetModal from "./PasswordResetModal";
 
 const NewPassword = () => {
   const [newPassword, setNewPassword] = useState("");
@@ -12,6 +13,7 @@ const NewPassword = () => {
   const [reveal2, setReveal2] = useState(false);
   const [error, setError] = useState(false);
   const [error2, setError2] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -87,10 +89,16 @@ const NewPassword = () => {
             {error2 && (
               <p className="error-message">Both passwords must match!</p>
             )}
-            <button className="btn btn-primary">Reset Password</button>
+            <button
+              onClick={() => setOpenModal(true)}
+              className="btn btn-primary mt-3"
+            >
+              Reset Password
+            </button>
           </form>
         </div>
       </div>
+      {openModal && <PasswordResetModal />}
     </div>
   );
 };
