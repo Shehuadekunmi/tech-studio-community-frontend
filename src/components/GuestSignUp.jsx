@@ -109,7 +109,10 @@ const GuestSignUp = () => {
                     type="text"
                     value={firstname}
                     id="first-name"
-                    onChange={(e) => setFirstname(e.target.value)}
+                    onChange={(e) => {
+                      setFirstname(e.target.value);
+                      setError(false);
+                    }}
                   />
                 </div>
                 <div className="sign-up-last-name d-flex flex-column gap-3">
@@ -124,6 +127,7 @@ const GuestSignUp = () => {
                 </div>
               </div>
               <div className="community-group d-flex flex-column gap-3">
+                <label htmlFor="community">Community Group</label>
                 <select name="community" id="community" className="px-3">
                   <option disabled selected>
                     Select Community

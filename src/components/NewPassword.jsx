@@ -98,7 +98,7 @@ const NewPassword = () => {
           </form>
         </div>
       </div>
-      {openModal && <PasswordResetModal />}
+      {/* {openModal && <PasswordResetModal />} */}
     </div>
   );
 };
