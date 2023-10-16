@@ -7,6 +7,7 @@ import googleIcon from "../assets/google-icon.svg";
 import lineIcon from "../assets/line-icon.svg";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -67,9 +68,13 @@ const Login = () => {
               </button>
               <div className="register d-flex gap-2 justify-content-center">
                 <p className="text-center">New User?</p>
-                <a className="text-decoration-none" href="#">
+                <Link
+                  to={"/GuestSignUp"}
+                  className="text-decoration-none"
+                  href="#"
+                >
                   Sign Up
-                </a>
+                </Link>
               </div>
             </form>
             <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
