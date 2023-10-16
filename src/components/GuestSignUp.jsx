@@ -20,6 +20,7 @@ const GuestSignUp = () => {
   const [error, setError] = useState(false);
   const [reveal, setReveal] = useState(false);
   const [reveal2, setReveal2] = useState(false);
+  const [community, setCommunity] = useState("");
 
   const validateForm = () => {
     const errorsObject = {};
@@ -128,7 +129,13 @@ const GuestSignUp = () => {
               </div>
               <div className="community-group d-flex flex-column gap-3">
                 <label htmlFor="community">Community Group</label>
-                <select name="community" id="community" className="px-3">
+                <select
+                  name="community"
+                  id="community"
+                  className="px-3"
+                  value={community}
+                  onChange={(e) => setCommunity(e.target.value)}
+                >
                   <option disabled selected>
                     Select Community
                   </option>
