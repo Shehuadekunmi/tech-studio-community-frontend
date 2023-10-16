@@ -1,36 +1,43 @@
 import "../styles/JobRequirements.css";
 import { Card, Button, Form } from "react-bootstrap";
-import backwardArrow from '../assets/backwardarrow.svg'
+import backwardArrow from "../assets/backwardarrow.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MultipleChoiceInput from "../Components/Choice";
+import "../styles/modal.css";
+import V1 from "../assets/Vector1.png";
 // import spinner from "../Components/Loader"
 
-export default function JobRequirements({jobPosterData}) {
-  const navigate =useNavigate()
-  
+export default function JobRequirements({ jobPosterData }) {
+  const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
   const initialFormData = {
-    jobTitle: '',
-    jobLocation: '',
-    jobType: '',
-    jobExperience: '',
-    jobDescription: '',
-    minimumQualification: '',
-    responsibilities: '',
-    payRange: '',
-    takingApplicants: '', 
+    jobTitle: "",
+    jobLocation: "",
+    jobType: "",
+    jobExperience: "",
+    jobDescription: "",
+    minimumQualification: "",
+    responsibilities: "",
+    payRange: "",
+    takingApplicants: "",
   };
   const [formData, setFormData] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState({});
-  const [dropDown,setDropDown] = useState({})
+  const [dropDown, setDropDown] = useState({});
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [selectedTools, setSelectedTools] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = 'https://techstudiocommunity.onrender.com'
+  const apiUrl = "https://techstudiocommunity.onrender.com";
   useEffect(() => {
     if (!jobPosterData.id) {
-      navigate('/talent');
+      navigate("/talent");
     }
   }, []);
 
@@ -41,22 +48,22 @@ export default function JobRequirements({jobPosterData}) {
         setDropDown(data);
       })
       .catch((error) => {
-        console.log(error)
-        navigate('/talent');
+        console.log(error);
+        navigate("/talent");
       });
   }, []);
 
   useEffect(() => {
     setFormErrors((prevFormErrors) => ({
       ...prevFormErrors,
-      selectedSkills: '',
+      selectedSkills: "",
     }));
   }, [selectedSkills]);
 
   useEffect(() => {
     setFormErrors((prevFormErrors) => ({
       ...prevFormErrors,
-      selectedTools: '',
+      selectedTools: "",
     }));
   }, [selectedTools]);
 
@@ -66,50 +73,50 @@ export default function JobRequirements({jobPosterData}) {
     // Form validation logic
     const errors = {};
 
-    if (formData.jobTitle.trim() === '') {
-      errors.jobTitle = 'Please enter a job title.';
+    if (formData.jobTitle.trim() === "") {
+      errors.jobTitle = "Please enter a job title.";
     }
 
-    if (!selectedSkills.length){
-      errors.selectedSkills = "Please add a Skill"
+    if (!selectedSkills.length) {
+      errors.selectedSkills = "Please add a Skill";
     }
 
-    if (selectedTools.length === 0){
-      errors.selectedTools = "Please add a Tool"
+    if (selectedTools.length === 0) {
+      errors.selectedTools = "Please add a Tool";
     }
 
-    if (formData.jobLocation.trim() === '') {
-      errors.jobLocation = 'Please enter a job location.';
+    if (formData.jobLocation.trim() === "") {
+      errors.jobLocation = "Please enter a job location.";
     }
 
-    if (formData.jobType.trim() === '') {
-      errors.jobType = 'Please select a job type.';
+    if (formData.jobType.trim() === "") {
+      errors.jobType = "Please select a job type.";
     }
 
-    if (formData.jobExperience.trim() === '') {
-      errors.jobExperience = 'Please select the minimum experience level requirement.';
+    if (formData.jobExperience.trim() === "") {
+      errors.jobExperience =
+        "Please select the minimum experience level requirement.";
     }
 
-    if (formData.jobDescription.trim() === '') {
-      errors.jobDescription = 'Please enter a job description.';
+    if (formData.jobDescription.trim() === "") {
+      errors.jobDescription = "Please enter a job description.";
     }
 
-    if (formData.minimumQualification.trim() === '') {
-      errors.minimumQualification = 'Please enter the minimum qualification.';
+    if (formData.minimumQualification.trim() === "") {
+      errors.minimumQualification = "Please enter the minimum qualification.";
     }
 
-    if (formData.responsibilities.trim() === '') {
-      errors.responsibilities = 'Please enter responsibilities.';
+    if (formData.responsibilities.trim() === "") {
+      errors.responsibilities = "Please enter responsibilities.";
     }
 
-    if (formData.payRange.trim() === '') {
-      errors.payRange = 'Please select a pay range.';
+    if (formData.payRange.trim() === "") {
+      errors.payRange = "Please select a pay range.";
     }
 
-    if (formData.takingApplicants.trim() === '') {
-      errors.takingApplicants = 'Please select the application deadline.';
+    if (formData.takingApplicants.trim() === "") {
+      errors.takingApplicants = "Please select the application deadline.";
     }
-
 
     if (Object.keys(errors).length === 0) {
       setLoading(true);
@@ -129,20 +136,20 @@ export default function JobRequirements({jobPosterData}) {
           pays_range: formData.payRange,
         };
         var requestOptions = {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(requestData),
         };
-    
+
         fetch(`${apiUrl}/api/jobs/posts/`, requestOptions)
-          .then(response => response.json())
-          .then(result => {
+          .then((response) => response.json())
+          .then((result) => {
             console.log(result);
           })
-          .catch(error => {
-            console.error('An error occurred:', error);
+          .catch((error) => {
+            console.error("An error occurred:", error);
             // Handle the error here
           })
           .finally(() => {
@@ -150,13 +157,12 @@ export default function JobRequirements({jobPosterData}) {
           });
       } catch (error) {
         window.location.reload();
-        console.error('An error occurred:', error);
+        console.error("An error occurred:", error);
       }
     } else {
       setFormErrors(errors);
     }
-  }
-    
+  };
 
   const handleFieldChange = (e) => {
     const { name, value } = e.target;
@@ -167,7 +173,7 @@ export default function JobRequirements({jobPosterData}) {
     // Clear the error message for the field when it changes
     setFormErrors({
       ...formErrors,
-      [name]: '',
+      [name]: "",
     });
   };
 
@@ -175,13 +181,20 @@ export default function JobRequirements({jobPosterData}) {
     <div className="job-body-main">
       <div className="job-body container">
         <div className="header-body pt-5 pb-4">
-            <button className="job-header-button d-flex gap-2 align-items-center"><img src={backwardArrow} alt="" className="img-fluid job-header-image" /><p className="mt-3">CANCEL & GO BACK</p></button>
-            <div className="text-center">
-                <h3 className="job-header">Job Requirement</h3>
-            </div>
+          <button className="job-header-button d-flex gap-2 align-items-center">
+            <img
+              src={backwardArrow}
+              alt=""
+              className="img-fluid job-header-image"
+            />
+            <p className="mt-3">CANCEL & GO BACK</p>
+          </button>
+          <div className="text-center">
+            <h3 className="job-header">Job Requirement</h3>
+          </div>
         </div>
-      <div className=" card-main-body">
-        {/* <Card className="container card-main-body mt-5 mb-5"> */}
+        <div className=" card-main-body">
+          {/* <Card className="container card-main-body mt-5 mb-5"> */}
           <Card.Body className="container px-5">
             <Form className="container" onSubmit={handleFormSubmit}>
               <div className="d-flex justify-content-between mt-5 mb-4">
@@ -198,12 +211,17 @@ export default function JobRequirements({jobPosterData}) {
                       name="jobTitle"
                       value={formData.jobTitle}
                       placeholder="Enter job title for this job post"
-                      className={`w-100 ${formErrors.jobTitle && "error"} job-title-input`}
+                      className={`w-100 ${
+                        formErrors.jobTitle && "error"
+                      } job-title-input`}
                       onChange={handleFieldChange}
                     />
                     <br />
                     {formErrors.jobTitle && (
-                    <small className="text-danger">{formErrors.jobTitle}</small>)}
+                      <small className="text-danger">
+                        {formErrors.jobTitle}
+                      </small>
+                    )}
                   </Form.Group>
                 </div>
 
@@ -220,14 +238,18 @@ export default function JobRequirements({jobPosterData}) {
                       name="jobLocation"
                       value={formData.jobLocation}
                       onChange={handleFieldChange}
-                      className={`w-100 h-100 ${formErrors.jobLocation && "error"} job-location-input`}
+                      className={`w-100 h-100 ${
+                        formErrors.jobLocation && "error"
+                      } job-location-input`}
                       placeholder="Enter job location for this job post"
                     />
                     <br />
                     {formErrors.jobLocation && (
-                    <small className="text-danger">{formErrors.jobLocation}</small>)}
+                      <small className="text-danger">
+                        {formErrors.jobLocation}
+                      </small>
+                    )}
                   </Form.Group>
-
                 </div>
               </div>
               <div className="d-flex justify-content-between mb-4">
@@ -239,25 +261,35 @@ export default function JobRequirements({jobPosterData}) {
                       </h6>
                     </Form.Label>
                     <br />
-                    <select 
-                     placeholder="Select Job Type"
-                     name="jobType"
-                    value={formData.jobType}
-                    onChange={handleFieldChange}
-                    className={` ${formErrors.jobType && "error"} position-select`}
+                    <select
+                      placeholder="Select Job Type"
+                      name="jobType"
+                      value={formData.jobType}
+                      onChange={handleFieldChange}
+                      className={` ${
+                        formErrors.jobType && "error"
+                      } position-select`}
                     >
-                    <option value="" disabled>
-                      Select Job Type
-                    </option>
-                      {dropDown.job_type && dropDown.job_type.map((type,index)=>{
-                        return(<>
-                        <option key={index} value={type}>{type}</option>
-                        </>)
-                      })}
+                      <option value="" disabled>
+                        Select Job Type
+                      </option>
+                      {dropDown.job_type &&
+                        dropDown.job_type.map((type, index) => {
+                          return (
+                            <>
+                              <option key={index} value={type}>
+                                {type}
+                              </option>
+                            </>
+                          );
+                        })}
                     </select>
                     <br />
                     {formErrors.jobType && (
-                    <small className="text-danger">{formErrors.jobType}</small>)}
+                      <small className="text-danger">
+                        {formErrors.jobType}
+                      </small>
+                    )}
                   </Form.Group>
                 </div>
 
@@ -269,27 +301,38 @@ export default function JobRequirements({jobPosterData}) {
                       </h6>
                     </Form.Label>
                     <br />
-                    <select 
-                    name="jobExperience"
-                    value={formData.jobExperience}
-                    onChange={handleFieldChange}
-                    className={` ${formErrors.jobExperience && "error"} experience-select`}
+                    <select
+                      name="jobExperience"
+                      value={formData.jobExperience}
+                      onChange={handleFieldChange}
+                      className={` ${
+                        formErrors.jobExperience && "error"
+                      } experience-select`}
                     >
-                    <option value="" disabled>
-                      Choose the minimum experience level requirement
-                    </option>
-                      {dropDown.job_experiences && dropDown.job_experiences.map((job_experience,index)=>{
-                        return(<>
-                        <option key={index} value={job_experience}>{job_experience}</option>
-                        </>)
-                      })}
+                      <option value="" disabled>
+                        Choose the minimum experience level requirement
+                      </option>
+                      {dropDown.job_experiences &&
+                        dropDown.job_experiences.map(
+                          (job_experience, index) => {
+                            return (
+                              <>
+                                <option key={index} value={job_experience}>
+                                  {job_experience}
+                                </option>
+                              </>
+                            );
+                          }
+                        )}
                     </select>
                     <br />
                     {formErrors.jobExperience && (
-                    <small className="text-danger">{formErrors.jobExperience}</small>)}
+                      <small className="text-danger">
+                        {formErrors.jobExperience}
+                      </small>
+                    )}
                   </Form.Group>
                 </div>
-
               </div>
               <div>
                 <Form.Group controlId="jobdescription">
@@ -305,12 +348,17 @@ export default function JobRequirements({jobPosterData}) {
                     value={formData.jobDescription}
                     onChange={handleFieldChange}
                     placeholder="Enter the title of position you want to fill"
-                    className={` ${formErrors.jobDescription && "error"} job-description-input`}
+                    className={` ${
+                      formErrors.jobDescription && "error"
+                    } job-description-input`}
                   />
-                  
+
                   <br />
                   {formErrors.jobDescription && (
-                  <small className="text-danger">{formErrors.jobDescription}</small>)}
+                    <small className="text-danger">
+                      {formErrors.jobDescription}
+                    </small>
+                  )}
                 </Form.Group>
 
                 <Form.Group controlId="minimumqualification">
@@ -325,28 +373,53 @@ export default function JobRequirements({jobPosterData}) {
                     name="minimumQualification"
                     value={formData.minimumQualification}
                     onChange={handleFieldChange}
-                    className={` ${formErrors.minimumQualification && "error"} minimum-qualification-input`}
+                    className={` ${
+                      formErrors.minimumQualification && "error"
+                    } minimum-qualification-input`}
                     placeholder="Enter the minimum level of qualification for the position you are hiring for"
                   />
                   <br />
                   {formErrors.minimumQualification && (
-                <small className="text-danger">{formErrors.minimumQualification}</small>)}
+                    <small className="text-danger">
+                      {formErrors.minimumQualification}
+                    </small>
+                  )}
                 </Form.Group>
               </div>
 
               <div className="d-flex justify-content-between gap-5 mt-5">
-              <div className="multiple-choice">
-              {formErrors.selectedSkills && (
-                    <small className="text-danger">{formErrors.selectedSkills}</small>)}
-              <MultipleChoiceInput initialChoices={dropDown.skills?dropDown.skills:[]} jobPosterData={jobPosterData} setSelectedChoices={setSelectedSkills} selectedChoices={selectedSkills} endpoint={"skills"} error = {formErrors.selectedSkills}/>
+                <div className="multiple-choice">
+                  {formErrors.selectedSkills && (
+                    <small className="text-danger">
+                      {formErrors.selectedSkills}
+                    </small>
+                  )}
+                  <MultipleChoiceInput
+                    initialChoices={dropDown.skills ? dropDown.skills : []}
+                    jobPosterData={jobPosterData}
+                    setSelectedChoices={setSelectedSkills}
+                    selectedChoices={selectedSkills}
+                    endpoint={"skills"}
+                    error={formErrors.selectedSkills}
+                  />
+                </div>
+                <div className="multiple-choice">
+                  {formErrors.selectedTools && (
+                    <small className="text-danger">
+                      {formErrors.selectedTools}
+                    </small>
+                  )}
+                  <MultipleChoiceInput
+                    initialChoices={dropDown.tools ? dropDown.tools : []}
+                    jobPosterData={jobPosterData}
+                    setSelectedChoices={setSelectedTools}
+                    selectedChoices={selectedTools}
+                    endpoint={"tools"}
+                    error={formErrors.selectedTools}
+                  />
+                </div>
               </div>
-              <div className="multiple-choice">
-              {formErrors.selectedTools && (
-                    <small className="text-danger">{formErrors.selectedTools}</small>)}
-              <MultipleChoiceInput initialChoices={dropDown.tools?dropDown.tools:[]} jobPosterData={jobPosterData} setSelectedChoices={setSelectedTools} selectedChoices={selectedTools} endpoint={"tools"} error ={formErrors.selectedTools}/>
-              </div>
-              </div> 
-              
+
               <Form.Group controlId="responsibilities" className="pt-4">
                 <Form.Label className="mt-4">
                   <h6>
@@ -355,16 +428,21 @@ export default function JobRequirements({jobPosterData}) {
                 </Form.Label>
                 <br />
                 <input
-                 type="text"
-                 name="responsibilities"
-                 value={formData.responsibilities}
-                 onChange={handleFieldChange}
-                 className={` ${formErrors.responsibilities && "error"} responsibilities-input`}
+                  type="text"
+                  name="responsibilities"
+                  value={formData.responsibilities}
+                  onChange={handleFieldChange}
+                  className={` ${
+                    formErrors.responsibilities && "error"
+                  } responsibilities-input`}
                   placeholder="Enter the list of responsibilities accompanying the position"
                 />
                 <br />
                 {formErrors.responsibilities && (
-          <small className="text-danger">{formErrors.responsibilities}</small>)}
+                  <small className="text-danger">
+                    {formErrors.responsibilities}
+                  </small>
+                )}
               </Form.Group>
 
               <div className="d-flex justify-content-between pt-4 pb-5">
@@ -377,23 +455,33 @@ export default function JobRequirements({jobPosterData}) {
                     </Form.Label>
                     <br />
                     <select
-                    name="payRange"
-                    value={formData.payRange}
-                    onChange={handleFieldChange}
-                    className={` ${formErrors.payRange && "error"} pay-range-select`}
+                      name="payRange"
+                      value={formData.payRange}
+                      onChange={handleFieldChange}
+                      className={` ${
+                        formErrors.payRange && "error"
+                      } pay-range-select`}
                     >
-                    <option value="" disabled>
-                      Select Amount
-                    </option>
-                    {dropDown.jobposts_pays && dropDown.jobposts_pays.map((job_experience,index)=>{
-                        return(<>
-                        <option key={index} value={job_experience}>{job_experience}</option>
-                        </>)
-                      })}
+                      <option value="" disabled>
+                        Select Amount
+                      </option>
+                      {dropDown.jobposts_pays &&
+                        dropDown.jobposts_pays.map((job_experience, index) => {
+                          return (
+                            <>
+                              <option key={index} value={job_experience}>
+                                {job_experience}
+                              </option>
+                            </>
+                          );
+                        })}
                     </select>
                     <br />
                     {formErrors.payRange && (
-          <small className="text-danger">{formErrors.payRange}</small>)}
+                      <small className="text-danger">
+                        {formErrors.payRange}
+                      </small>
+                    )}
                   </Form.Group>
                 </div>
 
@@ -401,48 +489,127 @@ export default function JobRequirements({jobPosterData}) {
                   <Form.Group controlId="takingapplicants">
                     <Form.Label className="mt-4">
                       <h6>
-                        <strong>For how long will you be taking applicants?</strong>
+                        <strong>
+                          For how long will you be taking applicants?
+                        </strong>
                       </h6>
                     </Form.Label>
                     <br />
                     <select
-                    name="takingApplicants"
-                    value={formData.takingApplicants}
-                    onChange={handleFieldChange}
-                    className={` ${formErrors.payRange && "takingApplicants"} applicant-select`}
+                      name="takingApplicants"
+                      value={formData.takingApplicants}
+                      onChange={handleFieldChange}
+                      className={` ${
+                        formErrors.payRange && "takingApplicants"
+                      } applicant-select`}
                     >
-                    <option value="" disabled>
-                      Set application deadline
-                    </option>
-                    {dropDown.deadline_choices && dropDown.deadline_choices.map((job_experience,index)=>{
-                        return(<>
-                        <option key={index} value={job_experience}>{job_experience}</option>
-                        </>)
-                      })}
+                      <option value="" disabled>
+                        Set application deadline
+                      </option>
+                      {dropDown.deadline_choices &&
+                        dropDown.deadline_choices.map(
+                          (job_experience, index) => {
+                            return (
+                              <>
+                                <option key={index} value={job_experience}>
+                                  {job_experience}
+                                </option>
+                              </>
+                            );
+                          }
+                        )}
                     </select>
                     <br />
                     {formErrors.takingApplicants && (
-                  <small className="text-danger">{formErrors.takingApplicants}</small>)}
+                      <small className="text-danger">
+                        {formErrors.takingApplicants}
+                      </small>
+                    )}
                   </Form.Group>
                 </div>
               </div>
             </Form>
           </Card.Body>
-        {/* </Card> */}
-             <div className="pt-3 ">
-             <div className="button-main pt-3 pb-3 px-5">
+          {/* </Card> */}
+          <div className="pt-3 ">
+            <div className="button-main pt-3 pb-3 px-5">
               <div>
-              <Link to={"/talent"}><button className="cancel-button">
-              CANCEL
-            </button>
-            </Link>
+                <Link to={"/talent"}>
+                  <button className="cancel-button">CANCEL</button>
+                </Link>
               </div>
 
-            <div className=""> <button className='submit-button' type='submit'>Submit</button> </div> 
+              <div className="">
+                {" "}
+                <button
+                  className="submit-button"
+                  type="submit"
+                  onClick={toggleModal}
+                >
+                  Submit
+                </button>{" "}
               </div>
-             </div>
+            </div>
+          </div>
+
+          {modal && (
+            <>
+              <button
+                type="button"
+                className="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Launch demo modal
+              </button>
+
+              <div
+                className="modal fade"
+                id="exampleModal"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel">
+                        Modal title
+                      </h1>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className=" border rounded-3 mt-5 pb-3 work">
+                      <div className="text-center background-holder w-auto ">
+                        <img src={V1} alt=" A right marked icon " />
+                      </div>
+                      <div>
+                        <div className="w-auto text-center Writeup">
+                          <h2 className="m-auto p-2">Well done!</h2>
+                          <p className="w-75  m-auto">
+                            Your job posting has been successfully submitted and
+                            is now under review by our team.
+                          </p>
+                          <button
+                            className="  border-0 m-auto mt-3"
+                            onClick={toggleModal}
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
