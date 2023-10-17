@@ -81,8 +81,8 @@ select {
   width: 22px;
 }
 
-form.error input,
-form.error select {
+
+.error{
   border: 2px solid red;
   animation: shake 0.3s;
 }

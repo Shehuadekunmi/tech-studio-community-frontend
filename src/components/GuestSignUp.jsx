@@ -8,67 +8,138 @@ import guestSignUpBanner from "../assets/guest-sign-up-banner.svg";
 import eyeclose from "../assets/eye-close.svg";
 import eyeopen from "../assets/eye-open.svg";
 import lineIcon from "../assets/line-icon.svg";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import PasswordResetModal from "./PasswordResetModal";
+
 
 const GuestSignUp = () => {
-  const [email, setEmail] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const apiURL = "https://techstudiocommunity.onrender.com"
+
+  const initialFormData = {
+    firstname: "",
+    lastname: "",
+    community: "",
+    password: "",
+    confirmPassword: "",
+    email:"",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
-  const [error, setError] = useState(false);
   const [reveal, setReveal] = useState(false);
   const [reveal2, setReveal2] = useState(false);
-  const [community, setCommunity] = useState("");
+  const [communityData,setCommunityData] = useState([])
+  const [modal,setModal] = useState({status:"",message:""})
+  const [loading,setLoading] = useState(false)
+  
+  useEffect(()=>{
+    fetch(`${apiURL}/api/users/community/`)
+  .then(response => response.json())
+          .then(result => {
+            setCommunityData(result)
+          })
+          .catch(error => {
+            window.location.reload();
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+
+  },[])
 
   const validateForm = () => {
     const errorsObject = {};
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isFormatValid = emailPattern.test(email);
+    function isEmailValid(email) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
 
-    if (!firstname) {
+    if (formData.firstname.trim() === "") {
       errorsObject.firstname = "Firstname is required";
     }
 
-    if (!lastname) {
+    if (formData.lastname.trim() === "") {
       errorsObject.lastname = "Lastname is required";
     }
 
-    if (!email) {
+    if (formData.community.trim() === "") {
+      errorsObject.community = "Select a community";
+    }
+
+    if (formData.email.trim() === "") {
       errorsObject.email = "Email is required!";
-    } else if (!isFormatValid) {
+    } else if (!isEmailValid) {
       errorsObject.email = "Enter valid email!";
     }
 
-    if (!password) {
+    if (formData.password.trim() === "") {
       errorsObject.password = "Password is required!";
-    } else if (password.length < 5) {
-      errorsObject.password = "Password length must be greater than 5!";
+    } else if (formData.password.length < 8) {
+      errorsObject.password = "Password length must be greater than 8!";
     }
 
-    if (!confirmPassword) {
+    if (formData.confirmPassword.trim() === "") {
       errorsObject.confirmPassword = "Please fill in the password!";
-    } else if (confirmPassword !== password) {
+    } else if (formData.confirmPassword !== formData.password) {
       errorsObject.confirmPassword = "Both passwords must match.";
     }
 
     return errorsObject;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
-
-    if (!email || !firstname || !lastname || !password || !confirmPassword) {
-      setError(true);
-    } else if (Object.keys(validationErrors).length === 0) {
-      console.log("Form is valid");
+  
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        setLoading(true);
+  
+        var requestData = {
+          email: formData.email,
+          first_name: formData.firstname,
+          last_name: formData.lastname,
+          community: formData.community,
+          password: formData.password,
+        };
+  
+        var requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        };
+  
+        const response = await fetch(`${apiURL}/auth/register/`, requestOptions);
+  
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "An error occurred");
+        }
+  
+        const result = await response.json();
+  
+        setModal((prevModal) => ({
+          ...prevModal,
+          status: true,
+          message: result.message,
+        }));
+      } catch (error) {
+        setModal((prevModal) => ({
+          ...prevModal,
+          status: false,
+          message: error.message,
+        }));
+      } finally {
+        setLoading(false);
+      }
     } else {
       setErrors(validationErrors);
     }
   };
+  
 
   const handleReveal = () => {
     setReveal(!reveal);
@@ -78,7 +149,21 @@ const GuestSignUp = () => {
     setReveal2(!reveal2);
   };
 
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Clear the error message for the field when it changes
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
+  };
+
   return (
+    <div>
     <div className="guest-sign-up d-flex">
       <div className="frame-3 d-none d-lg-flex align-items-center">
         <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
@@ -99,70 +184,91 @@ const GuestSignUp = () => {
             <form
               action=""
               onSubmit={handleSubmit}
-              className={error ? "error" : ""}
+              name=""
             >
               <div className="guest-name d-lg-flex justify-content-between">
-                <div className="sign-up-first-name d-flex flex-column gap-3">
-                  {/* {errors.firstname && <p>{errors.firstname}</p>} */}
-                  <label htmlFor="first-name">First Name</label>
+                <div className="sign-up-first-name d-flex flex-column gap-1">
+                  <label htmlFor="first-name">First Name {errors.firstname && (
+                      <small className="text-danger">
+                        {errors.firstname}
+                      </small>)}</label>
                   <input
-                    className="px-3"
+                    className={`px-3 ${errors.firstname && "error"}`}
+                    name="firstname"
                     type="text"
-                    value={firstname}
+                    value={formData.firstname}
                     id="first-name"
-                    onChange={(e) => {
-                      setFirstname(e.target.value);
-                      setError(false);
-                    }}
+                    onChange={handleFieldChange}
                   />
                 </div>
-                <div className="sign-up-last-name d-flex flex-column gap-3">
-                  <label htmlFor="last-name">Last Name</label>
+                <div className="sign-up-last-name d-flex flex-column gap-1">
+                  <label htmlFor="last-name">Last Name {errors.lastname && (
+                      <small className="text-danger">
+                        {errors.lastname}
+                      </small>
+                    )}</label>
+                  
                   <input
-                    className="px-3"
+                    className={`px-3 ${errors.lastname && "error"}`}
+                    name="lastname"
                     type="text"
-                    value={lastname}
+                    value={formData.lastname}
                     id="last-name"
-                    onChange={(e) => setLastname(e.target.value)}
+                    onChange={handleFieldChange}
                   />
                 </div>
               </div>
-              <div className="community-group d-flex flex-column gap-3">
-                <label htmlFor="community">Community Group</label>
+              <div className="community-group d-flex flex-column gap-1">
+                <label htmlFor="community">Community Group  {errors.community && (
+                      <small className="text-danger">
+                        {errors.community}
+                      </small>)}</label>
                 <select
                   name="community"
                   id="community"
-                  className="px-3"
-                  value={community}
-                  onChange={(e) => setCommunity(e.target.value)}
+                  className={`px-3 ${errors.community && "error"}`}
+                  value={formData.community}
+                  onChange={handleFieldChange}
                 >
-                  <option disabled selected>
+                  <option value={""} disabled>
                     Select Community
                   </option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Web Design">Web Design</option>
-                  <option value="Data Analysis">Data Analysis</option>
+                  {communityData && communityData.map((item)=>{
+                    return (<option key={item.id} value={item.id}>{item.name}</option>)
+                  })}
                 </select>
               </div>
-              <div className="sign-up-email d-flex flex-column gap-3">
-                <label htmlFor="email">Email Address</label>
+              <div className="sign-up-email d-flex flex-column gap-1">
+                <label htmlFor="email">Email Address &nbsp;
+                 {errors.email && (
+                      <small className="text-danger">
+                         {errors.email}
+                      </small>)}
+                </label>
                 <input
-                  className="px-3"
-                  type="email"
-                  value={email}
+                name="email"
+                className={`px-3 ${errors.email && "error"}`}
+                  type="text"
+                  value={formData.email}
                   id="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleFieldChange}
                 />
               </div>
-              <div className="sign-up-password d-flex flex-column gap-3">
-                <label htmlFor="password">Password</label>
+              <div className="sign-up-password d-flex flex-column gap-1">
+                <label htmlFor="password">Password &nbsp;
+                {errors.password && (
+                      <small className="text-danger">
+                        {errors.password}
+                      </small>)}
+                </label>
                 <div className="password-container">
                   <input
-                    className="px-3"
+                  name="password"
+                  className={`px-3 ${errors.password && "error"}`}
                     type={reveal ? "text" : "password"}
                     id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={formData.password}
+                    onChange={handleFieldChange}
                   />
                   <img
                     className="eye"
@@ -172,15 +278,21 @@ const GuestSignUp = () => {
                   />
                 </div>
               </div>
-              <div className="sign-up-confirm-password-password d-flex flex-column gap-3">
-                <label htmlFor="confirm-password">Confirm Password</label>
+              <div className="sign-up-confirm-password-password d-flex flex-column gap-1">
+                <label htmlFor="confirm-password">Confirm Password &nbsp;
+                {errors.confirmPassword && (
+                      <small className="text-danger">
+                        {errors.confirmPassword}
+                      </small>)}
+                </label>
                 <div className="password-container">
                   <input
-                    className="px-3"
+                    name="confirmPassword"
+                    className={`px-3 ${errors.confirmPassword && "error"}`}
                     type={reveal2 ? "text" : "password"}
                     id="confirm-password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    value={formData.confirmPassword}
+                    onChange={handleFieldChange}
                   />
                   <img
                     className="eye"
@@ -190,12 +302,6 @@ const GuestSignUp = () => {
                   />
                 </div>
               </div>
-              {errors.confirmPassword && (
-                <p className="error-message">{errors.confirmPassword}</p>
-              )}
-              {error && (
-                <p style={{ color: "red" }}>Please fill in all fields!</p>
-              )}
               <button type="submit" className="btn btn-primary d-block mt-3">
                 Register
               </button>
@@ -223,6 +329,8 @@ const GuestSignUp = () => {
           </div>
         </section>
       </div>
+    </div>
+    {modal.status !== "" && modal.message !== "" && <PasswordResetModal message={modal.message} status={modal.status} />}
     </div>
   );
 };
