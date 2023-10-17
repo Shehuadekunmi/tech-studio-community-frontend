@@ -10,6 +10,7 @@ import eyeopen from "../assets/eye-open.svg";
 import lineIcon from "../assets/line-icon.svg";
 import { useState,useEffect } from "react";
 import PasswordResetModal from "./PasswordResetModal";
+import { Link } from "react-router-dom";
 
 
 const GuestSignUp = () => {
@@ -173,6 +174,7 @@ const GuestSignUp = () => {
           </div>
         </div>
       </div>
+
       <div className="frame-4 d-flex">
         <section className="sign-up-content">
           <div className="blue-top w-100"></div>
@@ -305,13 +307,15 @@ const GuestSignUp = () => {
               <button type="submit" className="btn btn-primary d-block mt-3">
                 Register
               </button>
+
               <div className="register d-flex gap-2 justify-content-center">
                 <p className="text-center">Already have an account?</p>
-                <a className="text-decoration-none" href="#">
+                <Link to={"/Login"} className="text-decoration-none">
                   Login
-                </a>
+                </Link>
               </div>
             </form>
+
             <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
               <div>
                 <img className="lineIcon" src={lineIcon} alt="" />
@@ -321,6 +325,7 @@ const GuestSignUp = () => {
                 <img className="lineIcon" src={lineIcon} alt="" />
               </div>
             </div>
+
             <div className="social-icons d-flex justify-content-center gap-3">
               <img className="img-fluid" src={twitterIcon} alt="" />
               <img className="img-fluid" src={facebookIcon} alt="" />

@@ -6,18 +6,42 @@ import facebookIcon from "../assets/facebook-icon.svg";
 import googleIcon from "../assets/google-icon.svg";
 import lineIcon from "../assets/line-icon.svg";
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const errorsObject = {};
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isFormatValid = emailPattern.test(email);
+
+    if (!email) {
+      errorsObject.email = "Email is required!";
+    } else if (!isFormatValid) {
+      errorsObject.email = "Enter valid email!";
+    }
+
+    if (!password) {
+      errorsObject.password = "Password is required!";
+    } else if (password.length < 5) {
+      errorsObject.password = "Password length must be greater than 5!";
+    }
+
+    return errorsObject;
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email || !password) {
-      setError(true);
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length === 0) {
+      console.log("Form is valid");
+    } else {
+      setErrors(validationErrors);
     }
   }
 
@@ -39,34 +63,53 @@ const Login = () => {
               <h1 className="fw-bold">Welcome Back!</h1>
               <p>Let’s Help You Get Into Your Account.</p>
             </div>
-            <form onSubmit={handleSubmit} className={error ? "error" : ""}>
-              <div className="login-email d-flex flex-column gap-3">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+
+            <form onSubmit={handleSubmit}>
+              <div className={errors.email ? "error" : ""}>
+                <div className="login-email d-flex flex-column gap-3">
+                  <label htmlFor="email">Email Address</label>
+                  <input
+                    name="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      {
+                        errors.email = "";
+                      }
+                    }}
+                  />
+                  {errors.email && (
+                    <p className="error-message">{errors.email}</p>
+                  )}
+                </div>
               </div>
-              <div className="login-password d-flex flex-column gap-3">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+
+              <div className={errors.password ? "error" : ""}>
+                <div className="login-password d-flex flex-column gap-3">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      {
+                        errors.password = "";
+                      }
+                    }}
+                  />
+                  {errors.password && (
+                    <p className="error-message">{errors.password}</p>
+                  )}
+                </div>
               </div>
-              {error && (
-                <p style={{ color: "red" }}>All fields must be filled!</p>
-              )}
-              <button type="submit" className="btn btn-primary d-block">
+
+              <button type="submit" className="btn btn-primary d-block mt-3">
                 Login
               </button>
-              <div className="register d-flex gap-2 justify-content-center">
+              <div className="register d-flex gap-2 justify-content-center pt-2">
                 <p className="text-center">New User?</p>
                 <Link
                   to={"/GuestSignUp"}

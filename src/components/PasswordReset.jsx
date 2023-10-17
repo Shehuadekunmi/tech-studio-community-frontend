@@ -5,14 +5,31 @@ import { useState } from "react";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const errorsObject = {};
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isFormatValid = emailPattern.test(email);
+
+    if (!email) {
+      errorsObject.email = "Email is required!";
+    } else if (!isFormatValid) {
+      errorsObject.email = "Enter a valid email!";
+    }
+
+    return errorsObject;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // const isFormatValid = emailPattern.test(email);
-    if (!email) {
-      setError(true);
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length === 0) {
+      console.log("Form is valid");
+    } else {
+      setErrors(validationErrors);
     }
   };
   return (
@@ -25,24 +42,25 @@ const PasswordReset = () => {
       <div className="container">
         <div className="body">
           <h1>Reset Your Password.</h1>
-          <p>
+          <p className="message">
             To reset your password, enter the email address associated with your
             account. We’ll send you a link to create a new password.
           </p>
-          <form onSubmit={handleSubmit} className={error ? "error" : ""}>
+          <form onSubmit={handleSubmit} className={errors.email ? "error" : ""}>
             <input
               className="px-3"
-              type="email"
               id="email"
               value={email}
-              placeholder={
-                error
-                  ? "Email field cannot be empty!"
-                  : "Enter your email address"
-              }
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address..."
+              onChange={(e) => {
+                setEmail(e.target.value);
+                {
+                  errors.email = null;
+                }
+              }}
             />
-            <button type="submit" className="btn btn-primary">
+            {errors.email && <p className="error-message">{errors.email}</p>}
+            <button type="submit" className="btn btn-primary mt-3">
               Request Password Reset
             </button>
           </form>

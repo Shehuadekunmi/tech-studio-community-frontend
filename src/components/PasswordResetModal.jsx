@@ -3,7 +3,6 @@ import "../styles/PasswordResetModal.css";
 import { Link } from "react-router-dom";
 
 const PasswordResetModal = ({message,status,login}) => {
-  console.log(status);
   return (
     <div className="modalBackground">
       <div className="modal-container">

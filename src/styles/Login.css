@@ -14,11 +14,8 @@
 
 .frame-2 {
   padding-inline: clamp(1rem, 5%, 4rem);
-  /* width: 100%;
-  max-width: 862px; */
   width: 100%;
   height: 100%;
-  /* overflow-y: scroll; */
 }
 
 .login-content {
@@ -40,9 +37,7 @@
 }
 
 .line {
-  /* padding: 0.903px; */
   background-color: black;
-  /* width: 100%; */
 }
 
 form {
@@ -51,14 +46,9 @@ form {
   gap: 1.2rem;
 }
 
-form.error input {
-  border: 1px solid red;
-}
-
 .login-email label,
 .login-password label {
   color: var(--colors-font, #000);
-  /* font-family: Inter; */
   font-size: 14px;
 }
 
@@ -70,6 +60,7 @@ form.error input {
   border: 1px solid rgba(29, 28, 28, 0.5);
   background: var(--colors-primary, #fff);
   outline: none;
+  padding-left: 13px;
 }
 
 .login-heading h1 {
@@ -89,6 +80,7 @@ form.error input {
 .lineIcon {
   width: 100%;
 }
+
 
 @media screen and (min-width: 992px) {
   .login-email input,
