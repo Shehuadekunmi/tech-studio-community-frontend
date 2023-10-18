@@ -45,13 +45,12 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
           email: mail,
         }),
       });
-
       if (response.ok) {
         const data = await response.json();
         SetJobPosterData(data);
         navigate("/jobrequirement");
       } else {
-        window.location.reload();
+        // window.location.reload();
         console.error("API request failed");
       }
     } catch (error) {
@@ -98,16 +97,13 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
                   setMail(e.target.value);
                   handlecheck(e);
                 }}
-              />{" "}
+              />
               <br />
               <div className="button">
-                {" "}
                 <button className="btn btn-primary" type="submit">
-                  <Link to={'/jobrequirement'} className="text-decoration-none text-white">
                   {loading ? <Loader /> : "Get Started"}
-                  </Link>
-                </button>{" "}
-              </div>{" "}
+                </button>
+              </div>
               <br />
             </form>
           </div>

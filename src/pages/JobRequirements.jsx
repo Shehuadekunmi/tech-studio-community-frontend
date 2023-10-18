@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 import MultipleChoiceInput from "../Components/Choice";
 import "../styles/modal.css";
 import V1 from "../assets/Vector1.png";
-// import spinner from "../Components/Loader"
 
 export default function JobRequirements({ jobPosterData }) {
   const navigate = useNavigate();
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -180,28 +179,30 @@ export default function JobRequirements({ jobPosterData }) {
   return (
     <div className="job-body-main">
       <div className="job-body container">
-        <div className="header-body pt-5 pb-4">
-          <button className="job-header-button d-flex gap-2 align-items-center">
+        <div className="d-flex pt-5 pb-4 justify-content-center position-relative">
+          <button className="position-absolute job-header-button d-flex gap-2 align-items-center d-none d-md-flex start-0">
+            <div>
             <img
               src={backwardArrow}
               alt=""
               className="img-fluid job-header-image"
             />
+            </div>
             <p className="mt-3">CANCEL & GO BACK</p>
           </button>
-          <div className="text-center">
-            <h3 className="job-header">Job Requirement</h3>
+          <div className="text-center col-12 col-md-6 mx-md-5">
+            <h3 className="job-header text-center">Job Requirement</h3>
           </div>
         </div>
         <div className=" card-main-body">
-          {/* <Card className="container card-main-body mt-5 mb-5"> */}
-          <Card.Body className="container px-5">
-            <Form className="container" onSubmit={handleFormSubmit}>
-              <div className="d-flex justify-content-between mt-5 mb-4">
-                <div>
+          <Card.Body className="">
+            <Form className="" onSubmit={handleFormSubmit}>
+              <div className=" px-2 px-md-5">
+              <div className="d-flex justify-content-between my-3  flex-column flex-md-row row">
+                <div className="col-12 col-md-6">
                   <Form.Group controlId="jobtitle" className="w-100">
                     <Form.Label>
-                      <h6>
+                      <h6 >
                         <strong>Job title</strong>
                       </h6>
                     </Form.Label>
@@ -213,7 +214,7 @@ export default function JobRequirements({ jobPosterData }) {
                       placeholder="Enter job title for this job post"
                       className={`w-100 ${
                         formErrors.jobTitle && "error"
-                      } job-title-input`}
+                      }`}
                       onChange={handleFieldChange}
                     />
                     <br />
@@ -225,8 +226,8 @@ export default function JobRequirements({ jobPosterData }) {
                   </Form.Group>
                 </div>
 
-                <div>
-                  <Form.Group controlId="joblocation">
+                <div className="col-12 col-md-6">
+                  <Form.Group controlId="joblocation" className="w-100">
                     <Form.Label>
                       <h6>
                         <strong>Job location</strong>
@@ -238,9 +239,9 @@ export default function JobRequirements({ jobPosterData }) {
                       name="jobLocation"
                       value={formData.jobLocation}
                       onChange={handleFieldChange}
-                      className={`w-100 h-100 ${
+                      className={`w-100 ${
                         formErrors.jobLocation && "error"
-                      } job-location-input`}
+                      } `}
                       placeholder="Enter job location for this job post"
                     />
                     <br />
@@ -252,9 +253,9 @@ export default function JobRequirements({ jobPosterData }) {
                   </Form.Group>
                 </div>
               </div>
-              <div className="d-flex justify-content-between mb-4">
-                <div>
-                  <Form.Group controlId="jobposition">
+              <div className="d-flex justify-content-between my-3 flex-column flex-md-row row">
+                <div className="col-12 col-md-6">
+                  <Form.Group controlId="jobposition" className="w-100">
                     <Form.Label className="mt-4">
                       <h6>
                         <strong>What position type are you offering?</strong>
@@ -268,7 +269,7 @@ export default function JobRequirements({ jobPosterData }) {
                       onChange={handleFieldChange}
                       className={` ${
                         formErrors.jobType && "error"
-                      } position-select`}
+                      }  w-100`}
                     >
                       <option value="" disabled>
                         Select Job Type
@@ -276,11 +277,11 @@ export default function JobRequirements({ jobPosterData }) {
                       {dropDown.job_type &&
                         dropDown.job_type.map((type, index) => {
                           return (
-                            <>
+                            
                               <option key={index} value={type}>
                                 {type}
                               </option>
-                            </>
+                          
                           );
                         })}
                     </select>
@@ -293,8 +294,8 @@ export default function JobRequirements({ jobPosterData }) {
                   </Form.Group>
                 </div>
 
-                <div>
-                  <Form.Group controlId="jobposition">
+                <div className="col-12 col-md-6">
+                  <Form.Group controlId="jobposition" className="w-100">
                     <Form.Label className="mt-4">
                       <h6>
                         <strong>What level of experience do you want?</strong>
@@ -305,9 +306,9 @@ export default function JobRequirements({ jobPosterData }) {
                       name="jobExperience"
                       value={formData.jobExperience}
                       onChange={handleFieldChange}
-                      className={` ${
+                      className={` w-100 ${
                         formErrors.jobExperience && "error"
-                      } experience-select`}
+                      }`}
                     >
                       <option value="" disabled>
                         Choose the minimum experience level requirement
@@ -316,11 +317,9 @@ export default function JobRequirements({ jobPosterData }) {
                         dropDown.job_experiences.map(
                           (job_experience, index) => {
                             return (
-                              <>
                                 <option key={index} value={job_experience}>
                                   {job_experience}
                                 </option>
-                              </>
                             );
                           }
                         )}
@@ -342,15 +341,15 @@ export default function JobRequirements({ jobPosterData }) {
                     </h6>
                   </Form.Label>
                   <br />
-                  <input
+                  <textarea
                     type="text"
                     name="jobDescription"
                     value={formData.jobDescription}
                     onChange={handleFieldChange}
                     placeholder="Enter the title of position you want to fill"
-                    className={` ${
+                    className={` w-100 ${
                       formErrors.jobDescription && "error"
-                    } job-description-input`}
+                    }`}
                   />
 
                   <br />
@@ -368,14 +367,14 @@ export default function JobRequirements({ jobPosterData }) {
                     </h6>
                   </Form.Label>
                   <br />
-                  <input
+                  <textarea
                     type="text"
                     name="minimumQualification"
                     value={formData.minimumQualification}
                     onChange={handleFieldChange}
-                    className={` ${
+                    className={`w-100 ${
                       formErrors.minimumQualification && "error"
-                    } minimum-qualification-input`}
+                    } `}
                     placeholder="Enter the minimum level of qualification for the position you are hiring for"
                   />
                   <br />
@@ -387,8 +386,8 @@ export default function JobRequirements({ jobPosterData }) {
                 </Form.Group>
               </div>
 
-              <div className="d-flex justify-content-between gap-5 mt-5">
-                <div className="multiple-choice">
+              <div className="d-flex justify-content-between flex-column flex-md-row row mt-5 gap-3 gap-md-0 ">
+                <div className="multiple-choice col-12 col-md-6">
                   {formErrors.selectedSkills && (
                     <small className="text-danger">
                       {formErrors.selectedSkills}
@@ -403,7 +402,7 @@ export default function JobRequirements({ jobPosterData }) {
                     error={formErrors.selectedSkills}
                   />
                 </div>
-                <div className="multiple-choice">
+                <div className="multiple-choice col-12 col-md-6">
                   {formErrors.selectedTools && (
                     <small className="text-danger">
                       {formErrors.selectedTools}
@@ -427,14 +426,14 @@ export default function JobRequirements({ jobPosterData }) {
                   </h6>
                 </Form.Label>
                 <br />
-                <input
+                <textarea
                   type="text"
                   name="responsibilities"
                   value={formData.responsibilities}
                   onChange={handleFieldChange}
-                  className={` ${
+                  className={` w-100 ${
                     formErrors.responsibilities && "error"
-                  } responsibilities-input`}
+                  }`}
                   placeholder="Enter the list of responsibilities accompanying the position"
                 />
                 <br />
@@ -445,8 +444,8 @@ export default function JobRequirements({ jobPosterData }) {
                 )}
               </Form.Group>
 
-              <div className="d-flex justify-content-between pt-4 pb-5">
-                <div>
+              <div className="d-flex justify-content-between py-4 flex-column flex-md-row row ">
+                <div className="col-12 col-md-6">
                   <Form.Group controlId="payrange">
                     <Form.Label className="mt-4">
                       <h6>
@@ -458,9 +457,9 @@ export default function JobRequirements({ jobPosterData }) {
                       name="payRange"
                       value={formData.payRange}
                       onChange={handleFieldChange}
-                      className={` ${
+                      className={`w-100 ${
                         formErrors.payRange && "error"
-                      } pay-range-select`}
+                      } `}
                     >
                       <option value="" disabled>
                         Select Amount
@@ -468,11 +467,9 @@ export default function JobRequirements({ jobPosterData }) {
                       {dropDown.jobposts_pays &&
                         dropDown.jobposts_pays.map((job_experience, index) => {
                           return (
-                            <>
                               <option key={index} value={job_experience}>
                                 {job_experience}
                               </option>
-                            </>
                           );
                         })}
                     </select>
@@ -485,7 +482,7 @@ export default function JobRequirements({ jobPosterData }) {
                   </Form.Group>
                 </div>
 
-                <div>
+                <div className="col-12 col-md-6">
                   <Form.Group controlId="takingapplicants">
                     <Form.Label className="mt-4">
                       <h6>
@@ -499,9 +496,9 @@ export default function JobRequirements({ jobPosterData }) {
                       name="takingApplicants"
                       value={formData.takingApplicants}
                       onChange={handleFieldChange}
-                      className={` ${
-                        formErrors.payRange && "takingApplicants"
-                      } applicant-select`}
+                      className={`w-100 ${
+                        formErrors.payRange && "error"
+                      } `}
                     >
                       <option value="" disabled>
                         Set application deadline
@@ -510,11 +507,9 @@ export default function JobRequirements({ jobPosterData }) {
                         dropDown.deadline_choices.map(
                           (job_experience, index) => {
                             return (
-                              <>
                                 <option key={index} value={job_experience}>
                                   {job_experience}
                                 </option>
-                              </>
                             );
                           }
                         )}
@@ -528,11 +523,10 @@ export default function JobRequirements({ jobPosterData }) {
                   </Form.Group>
                 </div>
               </div>
-            </Form>
-          </Card.Body>
-          {/* </Card> */}
-          <div className="pt-3 ">
-            <div className="button-main pt-3 pb-3 px-5">
+              </div>
+           
+          <div className="pt-3 my-md-5">
+            <div className="container-md px-md-5 d-flex button-main justify-content-center gap-3 py-3 justify-content-md-end ">
               <div>
                 <Link to={"/talent"}>
                   <button className="cancel-button">CANCEL</button>
@@ -544,13 +538,15 @@ export default function JobRequirements({ jobPosterData }) {
                 <button
                   className="submit-button"
                   type="submit"
-                  onClick={toggleModal}
+                  // onClick={toggleModal}
                 >
                   Submit
                 </button>{" "}
               </div>
             </div>
           </div>
+          </Form>
+          </Card.Body>
 
           {modal && (
             <>
