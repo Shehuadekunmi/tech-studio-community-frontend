@@ -7,7 +7,7 @@ import MultipleChoiceInput from "../Components/Choice";
 import "../styles/modal.css";
 import V1 from "../assets/Vector1.png";
 import JobSubmission from "../Components/JobSubmission";
-import Loader from "../components/Loader";
+import Loader from "../Components/Loader"
 
 export default function JobRequirements({ jobPosterData }) {
   const navigate = useNavigate();
