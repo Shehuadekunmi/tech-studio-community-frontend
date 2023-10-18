@@ -6,10 +6,12 @@ import { useEffect, useState } from "react";
 import MultipleChoiceInput from "../Components/Choice";
 import "../styles/modal.css";
 import V1 from "../assets/Vector1.png";
+import JobSubmission from "../Components/JobSubmission";
+import Loader from "../components/Loader";
 
 export default function JobRequirements({ jobPosterData }) {
   const navigate = useNavigate();
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState({message:""});
 
   const toggleModal = () => {
     setModal(!modal);
@@ -145,10 +147,11 @@ export default function JobRequirements({ jobPosterData }) {
         fetch(`${apiUrl}/api/jobs/posts/`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
-            console.log(result);
+            setModal({message:"Your job posting has been successfully submitted and is now under review by our team."})
           })
           .catch((error) => {
             console.error("An error occurred:", error);
+            setModal({message:"An Error Occurred"})
             // Handle the error here
           })
           .finally(() => {
@@ -497,7 +500,7 @@ export default function JobRequirements({ jobPosterData }) {
                       value={formData.takingApplicants}
                       onChange={handleFieldChange}
                       className={`w-100 ${
-                        formErrors.payRange && "error"
+                        formErrors.takingApplicants && "error"
                       } `}
                     >
                       <option value="" disabled>
@@ -540,7 +543,7 @@ export default function JobRequirements({ jobPosterData }) {
                   type="submit"
                   // onClick={toggleModal}
                 >
-                  Submit
+                  {loading?<Loader/>:"Submit"}
                 </button>{" "}
               </div>
             </div>
@@ -548,60 +551,9 @@ export default function JobRequirements({ jobPosterData }) {
           </Form>
           </Card.Body>
 
-          {modal && (
+          {modal.message && (
             <>
-              <button
-                type="button"
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                Launch demo modal
-              </button>
-
-              <div
-                className="modal fade"
-                id="exampleModal"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h1 className="modal-title fs-5" id="exampleModalLabel">
-                        Modal title
-                      </h1>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className=" border rounded-3 mt-5 pb-3 work">
-                      <div className="text-center background-holder w-auto ">
-                        <img src={V1} alt=" A right marked icon " />
-                      </div>
-                      <div>
-                        <div className="w-auto text-center Writeup">
-                          <h2 className="m-auto p-2">Well done!</h2>
-                          <p className="w-75  m-auto">
-                            Your job posting has been successfully submitted and
-                            is now under review by our team.
-                          </p>
-                          <button
-                            className="  border-0 m-auto mt-3"
-                            onClick={toggleModal}
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <JobSubmission message={modal.message}/>
             </>
           )}
         </div>

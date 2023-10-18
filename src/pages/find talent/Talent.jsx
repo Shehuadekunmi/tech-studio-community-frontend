@@ -4,7 +4,7 @@ import FindtalentSec2 from '../../components/FindtalentSec2'
 
 const Index = ({SetJobPosterData}) => {
   return (
-    <div className='container' >
+    <div className='container talenter' >
       <FindtalentSec1 SetJobPosterData={SetJobPosterData}/>
       <FindtalentSec2/>
     </div>
