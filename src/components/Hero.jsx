@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/hero.css"
 import HeroImg from "../assets/HeroImage.png"
+import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -17,7 +18,7 @@ const Hero = () => {
           Engage in discussions, collaborate on projects, and build lasting
           relationships that could shape your tech journey.
         </p>
-        <button type="button" className="btn btn-primary">Join Community</button>
+        <Link to={"/login"}><div type="button" className="btn btn-primary p-2 px-4 fs-5 fw-bold rounded">Join Community</div></Link>
       </div>
     </div>
   );

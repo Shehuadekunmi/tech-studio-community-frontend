@@ -146,7 +146,7 @@ border: 1px solid #BABABA;
   flex-shrink: 0;
 }
 
-.pay-range-select{
+.job-requirements-page  .pay-range-select{
   /* width: 482px; */
   height: 51px;
   padding-right: 0px;
@@ -154,17 +154,11 @@ border: 1px solid #BABABA;
   flex-shrink: 0;
 }
 
-.applicant-select{
+.job-requirements-page  .applicant-select{
   /* width: 482px; */
   height: 51px;
   /* gap: 20px; */
   flex-shrink: 0;
-}
-
-textarea {
-  border: none;    
-  padding: 0;      
-  resize: none;     
 }
 
 .job-location-input::placeholder{
@@ -245,7 +239,7 @@ border: 1px solid #BABABA;
   width: 50%;
 }
 
-.cancel-button{
+.job-requirements-page  .cancel-button{
   width: 153px;
   padding: 8px 50px;
   align-items: center;
@@ -260,7 +254,7 @@ font-weight: 600;
 line-height: 22px; 
 }
 
-.submit-button{
+.job-requirements-page  .submit-button{
   width: 153px;
   padding: 8px 50px;
   align-items: center;
@@ -278,7 +272,7 @@ border: none;
 }
 
 
-textarea{
+.job-requirements-page textarea{
   border: 1px solid #BABABA !important; 
   border-radius: 5px;
   padding: 10px 10px !important;
@@ -287,7 +281,7 @@ textarea{
   outline: none;
 }
 
-input,select{
+.job-requirements-page  input,.job-requirements-page  select{
   border: 1px solid #BABABA !important; 
   border-radius: 5px;
   padding: 10px 10px !important;
@@ -303,3 +297,34 @@ input:focus{
 
 }
 
+.job-requirements-page .error{
+  border: red 2px solid !important;
+  animation: shake 0.3s;
+}
+
+
+
+@keyframes shake {
+0% {
+  transform: translateX(0);
+}
+2% {
+  transform: translateX(-2px);
+}
+40% {
+  transform: translateX(2px);
+}
+60% {
+  transform: translateX(-2px);
+}
+80% {
+  transform: translateX(2px);
+}
+100% {
+  transform: translateX(0);
+}
+}
+
+.job-requirements-page small{
+  font-weight: 700;
+}

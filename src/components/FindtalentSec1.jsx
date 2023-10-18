@@ -54,7 +54,7 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
         console.error("API request failed");
       }
     } catch (error) {
-      window.location.reload();
+      // window.location.reload();
       console.error("An error occurred:", error);
     } finally {
       setLoading(false);

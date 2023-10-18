@@ -286,7 +286,7 @@
 
 .error {
     border: 2px solid red !important;
-    animation: shake 0.3s;
+    animation: shake 0.3s !important;
 }
 
 @keyframes shake {

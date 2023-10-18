@@ -13,9 +13,6 @@ export default function JobRequirements({ jobPosterData }) {
   const navigate = useNavigate();
   const [modal, setModal] = useState({message:""});
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
 
   const initialFormData = {
     jobTitle: "",
@@ -180,10 +177,10 @@ export default function JobRequirements({ jobPosterData }) {
   };
 
   return (
-    <div className="job-body-main">
+    <div className="job-body-main job-requirements-page">
       <div className="job-body container">
         <div className="d-flex pt-5 pb-4 justify-content-center position-relative">
-          <button className="position-absolute job-header-button d-flex gap-2 align-items-center d-none d-md-flex start-0">
+          <Link to={'/talent'}> <button className="position-absolute job-header-button d-flex gap-2 align-items-center d-none d-md-flex start-0">
             <div>
             <img
               src={backwardArrow}
@@ -192,7 +189,7 @@ export default function JobRequirements({ jobPosterData }) {
             />
             </div>
             <p className="mt-3">CANCEL & GO BACK</p>
-          </button>
+          </button></Link>
           <div className="text-center col-12 col-md-6 mx-md-5">
             <h3 className="job-header text-center">Job Requirement</h3>
           </div>
