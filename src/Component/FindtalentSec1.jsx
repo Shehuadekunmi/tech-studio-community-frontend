@@ -5,7 +5,7 @@ import can from "../assets/can.svg";
 import frame from "../assets/Frame.svg";
 import layer from "../assets/Layer.svg";
 import "../pages/find talent/style.css"
-import Loader from "../Components/Loader"
+import Loader from "./Loader"
 
 const FindtalentSec1 = ({ SetJobPosterData }) => {
   const apiUrl = "https://techstudiocommunity.onrender.com";

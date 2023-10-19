@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import EmailConfimationModal from "../Components/EmailConfimationModal"
+import EmailConfimationModal from "../Component/EmailConfimationModal"
 import { useParams } from 'react-router-dom'
 import LoadingPage from './Loading'
-import GuestSignUp from "../Components/GuestSignUp"
+import GuestSignUp from "../Component/GuestSignUp"
 
 const EmailResend = () => {
     const apiURL = "https://techstudiocommunity.onrender.com"
