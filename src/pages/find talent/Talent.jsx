@@ -1,6 +1,6 @@
 import './style.css'
-import FindtalentSec1 from "../../component/FindtalentSec1"
-import FindtalentSec2 from "../../component/FindtalentSec2"
+import FindtalentSec1 from '../../components/FindtalentSec1'
+import FindtalentSec2 from "../../components/FindtalentSec2"
 
 const Index = ({SetJobPosterData}) => {
   return (
