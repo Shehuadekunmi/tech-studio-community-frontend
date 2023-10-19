@@ -3,10 +3,10 @@ import { Card, Button, Form } from "react-bootstrap";
 import backwardArrow from "../assets/backwardarrow.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import MultipleChoiceInput from "../components/Choice"
+import MultipleChoiceInput from "../component/Choice"
 import "../styles/modal.css";
-import JobSubmission from "../components/JobSubmission"
-import Loader from "../components/Loader"
+import JobSubmission from "../component/JobSubmission"
+import Loader from "../component/Loader"
 
 export default function JobRequirements({ jobPosterData }) {
   const navigate = useNavigate();

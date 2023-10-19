@@ -4,10 +4,10 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './pages/lading page/Home'
 import Talent from './pages/find talent/Talent'
 import { useState } from 'react';
-import Login from './components/Login'
-import GuestSignUp from "./components/GuestSignUp"
-import PasswordReset from "./components/PasswordReset"
-import NewPassword from "./components/NewPassword"
+import Login from './component/Login'
+import GuestSignUp from "./component/GuestSignUp"
+import PasswordReset from "./component/PasswordReset"
+import NewPassword from "./component/NewPassword"
 import EmailConfirmation from "./pages/EmailConfirmation";
 import EmailResend from "./pages/EmailResend";
 
