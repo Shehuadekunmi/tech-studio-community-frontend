@@ -101,7 +101,7 @@ const GuestSignUp = () => {
             </div>
 
             <form action="" onSubmit={handleSubmit}>
-              <div className="guest-name d-lg-flex justify-content-between">
+              <div className="guest-name justify-content-between">
                 <div className={errors.firstname ? "error" : ""}>
                   <div className="sign-up-first-name d-flex flex-column gap-3">
                     <label htmlFor="first-name">First Name</label>

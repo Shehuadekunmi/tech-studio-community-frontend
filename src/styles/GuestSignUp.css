@@ -21,6 +21,7 @@
   padding-inline: clamp(1rem, 5%, 4rem);
   width: 100%;
   overflow-y: scroll;
+  padding-block: 3rem;
 }
 
 .sign-up-content {
@@ -122,5 +123,11 @@ div.error select {
 
   .frame-4 {
     max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .guest-name {
+    display: flex;
   }
 }
