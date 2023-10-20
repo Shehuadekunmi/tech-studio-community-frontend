@@ -2,7 +2,8 @@ import tick from "../assets/Vector3.svg";
 import "../styles/PasswordResetModal.css";
 import { Link } from "react-router-dom";
 
-const PasswordResetModal = ({message,status,login}) => {
+const EmailConfimationModal = ({message,status,login,uid}) => {
+  console.log(status);
   return (
     <div className="modalBackground">
       <div className="modal-container">
@@ -14,12 +15,12 @@ const PasswordResetModal = ({message,status,login}) => {
           <p>
             {message}
           </p>
-          {!login && (status?<></>:<Link to={"/Login"}>
-            <button className="btn btn-primary">Login</button>
-          </Link>)}
 
           {login && <Link to={"/Login"}>
             <button className="btn btn-primary">Login</button>
+          </Link>}
+          {message === 'Link has expired. Click resend link to get new confimation link.' && <Link to={`/resend-email-confimation/${uid}/`}>
+            <button className="btn btn-primary">Resend Link</button>
           </Link>}
         </div>
       </div>
@@ -27,4 +28,4 @@ const PasswordResetModal = ({message,status,login}) => {
   );
 };
 
-export default PasswordResetModal;
+export default EmailConfimationModal;

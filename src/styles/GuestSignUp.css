@@ -82,15 +82,8 @@ select {
   width: 22px;
 }
 
-.error-message {
-  font-size: 13px;
-  color: red;
-  font-weight: 500;
-  margin: 0;
-}
 
-div.error input,
-div.error select {
+.error{
   border: 2px solid red;
   animation: shake 0.3s;
 }
