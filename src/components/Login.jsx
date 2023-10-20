@@ -65,45 +65,43 @@ const Login = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="form">
-              <div className={errors.email ? "error" : ""}>
-                <div className="login-email d-flex flex-column gap-3">
-                  <label htmlFor="email">Email Address</label>
-                  <input
-                    name="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      {
-                        errors.email = "";
-                      }
-                    }}
-                  />
-                  {errors.email && (
-                    <p className="error-message">{errors.email}</p>
-                  )}
-                </div>
+              <div className="login-email d-flex flex-column gap-3">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  className={errors.email ? "error" : ""}
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    {
+                      errors.email = "";
+                    }
+                  }}
+                />
+                {errors.email && (
+                  <p className="error-message">{errors.email}</p>
+                )}
               </div>
 
-              <div className={errors.password ? "error" : ""}>
-                <div className="login-password d-flex flex-column gap-3">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                      {
-                        errors.password = "";
-                      }
-                    }}
-                  />
-                  {errors.password && (
-                    <p className="error-message">{errors.password}</p>
-                  )}
-                </div>
+              <div className="login-password d-flex flex-column gap-3">
+                <label htmlFor="password">Password</label>
+                <input
+                  className={errors.password ? "error" : ""}
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    {
+                      errors.password = "";
+                    }
+                  }}
+                />
+                {errors.password && (
+                  <p className="error-message">{errors.password}</p>
+                )}
               </div>
 
               <button type="submit" className="btn btn-primary d-block mt-3">
