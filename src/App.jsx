@@ -1,13 +1,14 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import JobRequirements from './pages/JobRequirements'
 import "./App.css";
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './pages/lading page/Home'
 import Talent from './pages/find talent/Talent'
 import Dashboard from './pages/Dashboard/Dashboard';
 import Community from './pages/Community/Community';
 import PostDetails from './pages/postdetails/PostDetails';
 import ProjectList from './pages/ProjectList/ProjectList';
-import Profile from './pages/profile/Profile';
+import Profile from './pages/profile/ProfileInternal';
 import Edit from './pages/editeProfile/Edit';
 import { useState } from 'react';
 import Login from './components/Login'
@@ -32,6 +33,7 @@ function App() {
           <Route path='/projectlist' element={<ProjectList/>}/>
           <Route path='profile' element={<Profile/>}/>
           <Route path='/edit' element={<Edit/>}/>
+          <Route path="/profile" element={<Profile/>} />
           <Route path='/' element={<Home/>}/>
           <Route path="/talent" element={<Talent SetJobPosterData={SetJobPosterData}/>} />
           <Route path="/internalpage" element={<InternalPage />} />
