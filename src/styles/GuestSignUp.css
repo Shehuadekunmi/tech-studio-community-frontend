@@ -121,3 +121,8 @@ select {
     max-width: 50%;
   }
 }
+
+
+.guest-sign-up-con input,.guest-sign-up-con select{
+  padding: 0 10px;
+}

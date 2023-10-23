@@ -10,6 +10,7 @@ import PasswordReset from "./components/PasswordReset"
 import NewPassword from "./components/NewPassword"
 import EmailConfirmation from "./pages/EmailConfirmation";
 import EmailResend from "./pages/EmailResend";
+import InternalPage from './pages/InternalPage';
 
 function App() {
   const [jobPosterData, SetJobPosterData]= useState({})
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path="/talent" element={<Talent SetJobPosterData={SetJobPosterData}/>} />
+          <Route path="/internalpage" element={<InternalPage />} />
           <Route path='/jobrequirement' element={<JobRequirements jobPosterData={jobPosterData}/>} />
           <Route path="/Login" element={<Login />} />
           <Route path="/email-confimation/:uid/:token/" element={<EmailConfirmation />} />

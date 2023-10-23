@@ -11,6 +11,7 @@ import lineIcon from "../assets/line-icon.svg";
 import { useState, useEffect } from "react";
 import PasswordResetModal from "./PasswordResetModal";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 const GuestSignUp = () => {
   const apiURL = "https://techstudiocommunity.onrender.com";
@@ -164,7 +165,7 @@ const GuestSignUp = () => {
   };
 
   return (
-    <div>
+    <div className="guest-sign-up-con">
       <div className="guest-sign-up d-flex">
         <div className="frame-3 d-none d-lg-flex align-items-center">
           <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
@@ -302,7 +303,7 @@ const GuestSignUp = () => {
                   </div>
                 </div>
                 <button type="submit" className="btn btn-primary d-block mt-3">
-                  Register
+                  {loading?<Loader/>:<strong>Register</strong>}
                 </button>
 
                 <div className="register d-flex gap-2 justify-content-center">
