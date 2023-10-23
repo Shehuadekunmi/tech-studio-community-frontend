@@ -10,11 +10,17 @@
  color: var(--black);
   font-family: var(--Open-Sans);
   font-size: 0.95rem;
+  padding-block: 0.5rem;
 }
 .hero-text button{
  font-family: var(--Open-Sans);
-  font-size: 0.90rem;
+  font-size: 0.7rem;
   font-weight: 400;
+}
+.hero-text button:hover{
+  background-color: transparent;
+  color: var(--primary);
+
 }
 
 .hero-sec{
@@ -40,7 +46,7 @@
    font-size: 1rem;
   }
   .hero-text button{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -58,7 +64,7 @@
   font-size: 1.5rem;
  }
  .hero-text button{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
  }
 } 
 
@@ -73,10 +79,10 @@
   }
 
   .hero-text p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .hero-text button{
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 

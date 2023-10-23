@@ -1,7 +1,6 @@
 import React from "react";
-import "../styles/hero.css"
-import HeroImg from "../assets/HeroImage.png"
-
+import "../styles/hero.css";
+import HeroImg from "../assets/HeroImage.png";
 
 const Hero = () => {
   return (
@@ -17,7 +16,11 @@ const Hero = () => {
           Engage in discussions, collaborate on projects, and build lasting
           relationships that could shape your tech journey.
         </p>
-        <button type="button" className="btn btn-primary">Join Community</button>
+        <div className="w-50 ">
+          <button type="button" className="btn btn-primary">
+            Join Community
+          </button>
+        </div>
       </div>
     </div>
   );
