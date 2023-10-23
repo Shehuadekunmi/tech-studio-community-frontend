@@ -3,11 +3,10 @@ import FindtalentSec1 from '../../components/FindtalentSec1'
 import FindtalentSec2 from '../../components/FindtalentSec2'
 // import Footer from '../../components/Footer'
 
-const Index = () => {
+const Index = ({SetJobPosterData}) => {
   return (
-    <div className='container' >
-      {/* <Footer/> */}
-      <FindtalentSec1/>
+    <div className='container talenter' >
+      <FindtalentSec1 SetJobPosterData={SetJobPosterData}/>
       <FindtalentSec2/>
     </div>
   )
