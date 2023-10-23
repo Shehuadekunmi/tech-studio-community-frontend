@@ -1,0 +1,122 @@
+
+.hero-sec{
+   margin-top: 1rem;
+}
+.filter h3{
+color: var(--black);
+ font-family: var(--Open-Sans);
+ font-size: 0.9rem;
+ font-weight: 700;
+ margin-block: auto;
+}
+.filter select{
+   width: auto;
+   height: 100%;
+ border-radius: 5px;
+  border: 1px solid rgba(30, 30, 30, 0.50);
+  outline: none;
+  color: var(--black);
+   text-align: center;
+   line-height: 150%;
+   padding: 0.2rem;
+      letter-spacing: 0.36px;
+   font-family: var(--Open-Sans);
+   font-size: 0.8rem;
+   font-weight: 600;
+   text-transform: capitalize;
+}
+.filter option{
+   color: var(--colors-font, #000);
+      font-family: var(--Open-Sans);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+}
+.profile-name{
+   font-size: 0.80rem;
+   color: var(--colors-font, #000);
+      font-family: var(--Open-Sans);
+      font-weight: 400;
+}
+.profile-icon{
+   width: 25px;
+   height: 25px;
+}
+.profile-image{
+   width: 100%;
+   height: 100%;
+}
+.profile{
+   margin-block: 1rem;
+}
+.profile-tittle{
+   position: sticky;
+   margin: auto;
+   margin-top: -24%;
+   transition: 0.5s ease-in-out;
+}
+.profile-tittle:hover{
+transform: translateY(20px);
+}
+.profile-tittle::before{
+   content:"";
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;width: 100%;
+   height: 100%;
+   background:linear-gradient(to button, rgba(0, 176, 155, 0.5)rgba(0, 176, 155, 0.5));
+opacity: 0;
+}
+
+
+
+@media (min-width: 760px) {
+   .filter h3{
+      font-size: 1rem;
+   }
+   .filter select{
+      font-size: 0.9rem;
+   }
+
+   .project-profile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+   }
+   .profile{
+      width: 80%;
+      margin: 1rem auto;
+      margin-block: 2rem;
+
+   }
+
+}
+
+@media (min-width: 900px ) {
+   .filter h3 {
+         font-size: 1.8rem;
+      }
+   
+      .filter select {
+         font-size: 1.1rem;
+         font-weight: 600;
+      }
+      .filter option{
+      color: var(--black);
+         font-family: var(--Open-Sans);
+         font-size: 1rem;
+         font-weight: 400;
+      }
+   .project-profile {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+   
+      }
+             .profile {
+                width: 90%;
+                margin:auto;
+                margin-block: 2.5rem;
+             }
+}
