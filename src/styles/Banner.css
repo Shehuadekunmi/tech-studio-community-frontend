@@ -1,0 +1,27 @@
+.ban{
+    background-image: url('../src/assets/tc.png');
+    background-position: center;
+    background-size: auto;
+    height: 80vh;
+    width: 100%;
+}
+.inner div{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+    font-size: x-large;
+}
+.inner h2{
+    color: red;
+}
+
+@media (max-width: 768px){
+    .inner div{
+        font-size: large;
+    }
+    .ban{
+        height: 60vh;
+    }
+}

@@ -1,12 +1,16 @@
 import React from 'react'
-import "../Styles/Banner.css"
+import "../styles/Banner.css"
 
 const Banner = () => {
   return (
     <div className='ban'>
-      <div ><h2 className='fw-bold'>Explore Community</h2></div>
-      <div><h2  className='text-danger'>Meet the tech Innovatore who fuel Our community's growth</h2></div>
-      <div><h2> Whether you're seeking collaboration, finding talents, or simply looking to expand your network, you've come to the right place. </h2></div>
+      <section className='inner'>
+        <div>
+      <h1 className='fw-bold'>Explore Community</h1>
+      <h2  className='red'>Meet the tech Innovatore who fuel Our community's growth</h2>
+          <h3> Whether you're seeking collaboration, finding talents, or simply looking <br /> to expand your network, you've come to the right place. </h3>
+          </div>
+        </section>
     </div>
   )
 }
