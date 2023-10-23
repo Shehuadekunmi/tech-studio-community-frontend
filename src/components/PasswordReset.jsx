@@ -46,9 +46,9 @@ const PasswordReset = () => {
             To reset your password, enter the email address associated with your
             account. We’ll send you a link to create a new password.
           </p>
-          <form onSubmit={handleSubmit} className={errors.email ? "error" : ""}>
+          <form onSubmit={handleSubmit}>
             <input
-              className="px-3"
+              className={errors.email ? "error" : ""}
               id="email"
               value={email}
               placeholder="Enter your email address..."
@@ -59,8 +59,8 @@ const PasswordReset = () => {
                 }
               }}
             />
-            {errors.email && <p className="error-message">{errors.email}</p>}
-            <button type="submit" className="btn btn-primary mt-3">
+            {errors.email && <p className="error-message mt-2">{errors.email}</p>}
+            <button type="submit" className="btn btn-primary mt-4">
               Request Password Reset
             </button>
           </form>

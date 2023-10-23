@@ -11,7 +11,7 @@ const NewPassword = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [reveal, setReveal] = useState(false);
   const [reveal2, setReveal2] = useState(false);
-  // const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -61,55 +61,61 @@ const NewPassword = () => {
             To reset your password, please enter a new password below.
           </p>
           <form onSubmit={handleSubmit}>
-            <div className={errors.newPassword ? "error" : ""}>
+            <div>
               <div className="d-flex flex-column form-div">
                 <label htmlFor="email">New Password</label>
-                <input
-                  className="px-3"
-                  type={reveal ? "text" : "password"}
-                  id="password"
-                  placeholder="Enter new password"
-                  value={newPassword}
-                  onChange={(e) => {
-                    setNewPassword(e.target.value);
-                    {
-                      errors.newPassword = null;
-                    }
-                  }}
-                />
-                <img
-                  className="eye"
-                  onClick={handleReveal}
-                  src={reveal ? eyeclose : eyeopen}
-                  alt=""
-                />
+                <div className="input-field">
+                  <input
+                    className={errors.newPassword ? "error" : ""}
+                    type={reveal ? "text" : "password"}
+                    id="password"
+                    placeholder="Enter new password"
+                    value={newPassword}
+                    onChange={(e) => {
+                      setNewPassword(e.target.value);
+                      {
+                        errors.newPassword = null;
+                      }
+                    }}
+                  />
+                  <img
+                    className="eye"
+                    onClick={handleReveal}
+                    src={reveal ? eyeclose : eyeopen}
+                    alt=""
+                  />
+                </div>
               </div>
               {errors.newPassword && (
                 <p className="error-message mt-2">{errors.newPassword}</p>
               )}
             </div>
-            <div className={errors.confirmNewPassword ? "error" : ""}>
+            <div>
               <div className="d-flex flex-column form-div">
-                <label htmlFor="email">Confirm Password</label>
-                <input
-                  className="px-3"
-                  type={reveal2 ? "text" : "password"}
-                  id="confirmpassword"
-                  placeholder="Confirm new password"
-                  value={confirmNewPassword}
-                  onChange={(e) => {
-                    setConfirmNewPassword(e.target.value);
-                    {
-                      errors.confirmNewPassword = null;
-                    }
-                  }}
-                />
-                <img
-                  className="eye"
-                  onClick={handleReveal2}
-                  src={reveal2 ? eyeclose : eyeopen}
-                  alt=""
-                />
+                <label className="mt-4" htmlFor="email">
+                  Confirm Password
+                </label>
+                <div className="input-field">
+                  <input
+                    className={errors.confirmNewPassword ? "error" : ""}
+                    type={reveal2 ? "text" : "password"}
+                    id="confirmpassword"
+                    placeholder="Confirm new password"
+                    value={confirmNewPassword}
+                    onChange={(e) => {
+                      setConfirmNewPassword(e.target.value);
+                      {
+                        errors.confirmNewPassword = null;
+                      }
+                    }}
+                  />
+                  <img
+                    className="eye"
+                    onClick={handleReveal2}
+                    src={reveal2 ? eyeclose : eyeopen}
+                    alt=""
+                  />
+                </div>
               </div>
               {errors.confirmNewPassword && (
                 <p className="error-message mt-2">
@@ -119,7 +125,7 @@ const NewPassword = () => {
             </div>
             <button
               // onClick={() => setOpenModal(true)}
-              className="btn btn-primary mt-3"
+              className="btn btn-primary mt-4"
             >
               Reset Password
             </button>

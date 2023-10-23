@@ -19,6 +19,7 @@
 
 .frame-4 {
   padding-inline: clamp(1rem, 5%, 4rem);
+  padding-block: 2rem;
   width: 100%;
   overflow-y: scroll;
 }
@@ -81,10 +82,13 @@ select {
   width: 22px;
 }
 
-
-.error{
+.error {
   border: 2px solid red;
   animation: shake 0.3s;
+}
+
+.community-group select {
+  padding-inline: 10px;
 }
 
 @keyframes shake {
