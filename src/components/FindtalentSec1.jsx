@@ -42,7 +42,7 @@ const FindtalentSec1 = () => {
         <div className='my-5 do'>
           <img src={frame} alt="" />
           <h2>Review & Shortlist</h2>
-          <p>Create aa position on Hired and specify the skills and experience you ‘re looking for</p>
+          < p className='px-md-1'> Create a position on Hired and specify the skills and experience you‘re looking for</p>
         </div>
         <div className='my-5 do'>
           <img src={can} alt="" />

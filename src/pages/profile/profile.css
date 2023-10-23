@@ -1,0 +1,89 @@
+.prof4 img{
+ width: 25%;
+ position: relative;
+ left: 100px;
+ top: -30px;
+}
+
+.container h2, h3, h4, p{
+    font-family: Open Sans;
+}
+
+.shehu-profile-img{
+    display: flex;
+    width: 90%;
+    overflow-x: scroll;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.shehu-profile-img img{
+    width: 90%;
+}
+
+.vert{
+height: 57.5px; 
+    border: 1px solid #BABABA;
+}
+.second p {
+    opacity: .5;
+}
+.second{
+    width: 50%;
+}
+
+.first h3{
+    color: #000;
+font-family: Open Sans;
+font-size: 24px;
+font-weight: 800;
+}
+
+.about-me p{
+    color: #000;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+@media (min-width:760px) {
+    .prof4 img{
+        top: -100px;
+    }
+     .second, .third{
+        width: 30%;
+    }
+
+    .first{
+        width: 40;
+    }
+   
+}
+
+@media (min-width:900px) {
+    .shehu-profile-img img{
+        width: 40%;
+        height: 300px;
+    }
+
+    .prof4 img{
+      width: 13%;
+    }
+
+    .first, .second, .third{
+        width: 30%;
+    }
+
+    .third button{
+        width: 70%;
+    }
+
+    .about-me p{
+        width: 70%;
+    }
+
+    .container p{
+        font-size: 20px;
+    }
+}

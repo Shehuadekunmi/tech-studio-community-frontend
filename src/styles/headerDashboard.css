@@ -1,0 +1,92 @@
+
+.head{
+    position: fixed !important;
+    margin-top: 1px !important;
+}
+
+.head h1{
+    color: var(--white-200, #F7F7F7);
+font-family: Open Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+/* .dash{
+    width: 100%;
+    margin-left: 214p;
+    } */
+  
+  .head, .inp{
+    background: var(--primary) !important;
+    
+  }
+  
+  
+  .inp{
+    border-radius: 20px;
+    border: 0.3px solid #FFFFFF;
+  }
+  
+  
+  .inp::placeholder{
+    padding-left: 35px;
+    color: var(--white-100, #FFF);
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+  
+  
+
+
+
+
+
+@media (min-width:760px) {
+  .head{
+    width:85%;
+    margin-left: 114px;
+  }
+  
+  }
+
+  
+  @media (min-width: 900px) {
+    .kk box-icon{
+      top: 20px !important;
+      width: 30px;
+      left: 33px;
+    }
+    .inp{
+      width: 380px;
+      border: 0.3px solid #FFFFFF;
+    height: 40px;
+    margin-top: 10px;
+    }
+    .head{
+    width: 85%;
+    margin-left: 214px;
+    }
+    .tag img{
+      width: 40px;
+      height: 40px;
+    }
+    .tag p{
+      font-size: 10p;
+      width: 120px;
+    }
+    .mt{
+      width: 70%;
+    }
+    .tag select{
+      background: var(--primary);
+      border: none;
+      color: #FFF;
+      margin-bottom: 10px; margin-right: 20px;
+    }
+  }
+  

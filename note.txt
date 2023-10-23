@@ -1,0 +1,72 @@
+import React, { useEffect, useState } from 'react'
+import {HiMenuAlt3} from 'react-icons/hi'
+import {MdDashboard} from 'react-icons/md'
+import {BiUserCircle, BiSolidMessageAltDots} from 'react-icons/bi'
+import {AiFillSetting} from 'react-icons/ai'
+import {CgCommunity} from 'react-icons/cg'
+
+import { Link } from 'react-router-dom'
+import Dashboard from '../pages/Dashboard/Dashboard'
+import '../styles/shehu.css'
+// import logo from '../assets/logo.png'
+
+
+const Footer = () => {
+  const [open, setOpen] = useState(true)
+    const handleClick = () => {
+      setOpen(!open);
+    }
+  const menus = [
+    {name: 'Dashboard', link: '/', icon: MdDashboard},
+    {name: 'User', link: '/', icon: BiUserCircle},
+    {name: 'Setting', link: '/', icon: AiFillSetting},
+    {name: 'Community', link: '/', icon: CgCommunity},
+    {name: 'Message', link: '/', icon: BiSolidMessageAltDots}
+  ]
+
+  
+
+  return (
+    <div className='d-flex'>
+      <div className={`bg ${open ? <div className='noo'></div> : 'w-25'} duration-500`}>
+
+
+<div className=" position-relative group d-flex justify-content-end py-2 ">
+   <HiMenuAlt3 className='text-white cur cursor-pointer px-1 ' size={26} onClick={handleClick}/>
+   </div>
+
+<div className="">
+  {
+    menus?.map((menu, i) => (
+
+<Link to={menu?.link} key={i} className='text-decoration-none text-white d-flex gap-3 shehu_menu mx-2'>
+  <div>{React.createElement(menu?.icon, {size: '28'})}</div>
+<p className={` whitespace-pre duration-500 ${open && 'opacity-0 overflow-hidden' }`}
+style={{transitionDelay: `${i + 3}00ms`}}>
+  {menu?.name}</p>
+
+  <p className={`${!open && 'invisible'} position-absolut left-50 ola text-dark w-0 px-0 fw-semibold py-0 shadow-sm mb-5 bg-body-tertiary
+ `} >
+    
+    {menu.name}</p>
+</Link>
+
+    ))}
+
+
+</div>
+      </div>
+
+      <div>
+        <h1>Dashboard</h1>
+      </div>
+
+      <div id="facebookicon">
+    <img src="https://www.facebookbrand.com/img/assets/asset.f.logo.lg.png"/> 
+    </div>
+<div id="onhoverfb">Follow Us</div>
+    </div>
+  )
+}
+
+export default Footer

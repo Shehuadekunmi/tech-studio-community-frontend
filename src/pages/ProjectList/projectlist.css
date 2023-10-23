@@ -1,0 +1,103 @@
+ .projectlist h5{
+    color: #000;
+text-align: center;
+font-family: Open Sans;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 36px */
+letter-spacing: 0.48px;
+text-transform: capitalize;
+ }
+ 
+ .shehu-card-plus{
+    border-radius: 20px;
+    border: 2px dashed #000;
+    background: #D9D9D9;
+}
+.dd{
+    width: 95%;
+    border: none;
+}
+
+.shehu-eye{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.shehu-eye img{
+    width: 100%;
+}
+
+.shehu-eye p{
+    font-size: 12px;
+}
+
+.art{
+    border: 2px solid darkblue;
+}
+
+.dele{
+    width: 10%;
+    position: relative;
+    left: 260px;
+    top: 50px;
+}
+.dele img{
+    width: 100%;
+}
+
+
+@media (min-width:760px) {
+
+    .projectlist{
+        width: 85% !important;
+        margin-left: 115px;
+        padding-top: 100px;
+      }
+
+    .dd{
+        height: 200px !important;
+        margin-top: 45px;
+    }
+    .shehu-card-plus{
+        height: 180px;
+    }
+
+    .shehu-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .dele{
+        width: 15%;
+        left: 250px;
+        top: 60px;
+    }
+}
+
+@media (min-width:900px) {
+    .dd{
+        /* border: 2px solid darkblue; */
+        height: 320px !important;
+        margin-top: 73px;
+    }
+
+   .shehu-list-icon{
+    margin-top: 100px;
+   }
+
+   
+    .shehu-card-plus{
+        height: 100%;
+    }
+    .dele{
+        width: 12%;
+        left: 500px;
+        top: 105px;
+    }
+
+    .shehu-eye p, .shehu-list-icon p{
+        font-size: 20px;
+    }
+}

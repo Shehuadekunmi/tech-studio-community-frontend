@@ -1,0 +1,113 @@
+
+.sidebar{
+    height: 100v;
+    /* position: fixed; */
+}
+
+.tv span, .hom span, .up span, .play span, .img span, .movie span {
+    font-family:'Open-Sans';
+}
+
+.img{
+font-size: 16px;
+font-weight: 700;
+}
+
+
+.sidebar{
+    width: 30%;
+    position: fixed;
+    height: 100%;
+    border: 1px solid #0000004D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--primary);
+}
+
+
+.start{
+    border: none;
+    width: 90px;
+height: 30px;
+border-radius: 30px;
+font-size: 10px;
+}
+
+@media (min-width:760px) {
+
+.sidebar{
+    height: 100vh !important;
+}
+
+.icon, .movie img{
+    width: 20px;
+}
+.img{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.img img{
+    width: 100px; height: 54px;
+}
+    .sidebar{
+        width: 15%;
+       margin-top: 0px;
+    }
+    .play {
+        width: 90%;
+    }
+    .movie p{
+        width: 100%;
+       padding-top: 10px;
+       font-size: 10px;
+    }
+    .up, .hom, .tv{
+        width: 100%;
+    }
+    .tv p, .hom p, .up p, .play p, .img p{
+        width: 100%;
+        font-size: 10px;
+    }
+  
+}
+
+@media (min-width:1000px) {
+    .img{
+        margin-top: 12px; 
+        margin-bottom: 80px;
+        margin-right: 26px;
+        margin-left: 31px;
+        
+    }
+    .img img{
+        width: 160px; height: 54px;
+    }
+    .sidebar{
+        width: 15%;
+        margin-top: 0px;
+    }
+
+    .play {
+        width: 70%;
+    }
+    .play p{
+        width: 90%;
+        font-size: 18px;
+    }
+    .play button{
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .tv p, .hom p, .up p, .play p, .img p, .movie p{
+        width: 100%;
+        font-size: 20px;
+        font-family: var(--Opan-Sans);
+    }
+
+    .tv{
+        margin-top: 140px;
+    }
+  
+}

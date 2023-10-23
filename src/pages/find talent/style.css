@@ -1,13 +1,14 @@
 .one h1 {
     color: var(--primary);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 40px;
     font-weight: 700;
+
 }
 
 .one p {
     color: var(--secondry);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 16px;
     font-weight: 400;
 }
@@ -18,6 +19,10 @@
 .sec22{
     background-color: var(--bg);
 
+}
+.form form{
+    height: 300px;
+    width: 60%;
 }
 .form form,
 .form1 {
@@ -34,9 +39,10 @@
 
 .form img {
     position: relative;
-    top: -120px;
-    left: 160px;
+    top: -100px;
+    left: 250px;
     z-index: 0 !important;
+    width: 110px;
 }
 
 .form input,
@@ -46,12 +52,17 @@
     border-radius: 5px;
     border: 1px solid #BABABA;
     height: 40px;
+    font-family: var(--Open-Sans);
+
 }
 
 .button {
     width: 80%;
     margin: 0 auto;
+    font-family: var(--Open-Sans);
 }
+
+
 
 .btn {
     width: 100%;
@@ -73,7 +84,7 @@
 
 .two h1 {
     color: var(--primary);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 20px;
     font-weight: 700;
 }
@@ -92,7 +103,6 @@
 }
 
 .two h2 {
-    border: 2px solid darkblue;
     font-family: Open Sans;
     font-size: 24px;
     font-style: normal;
@@ -101,13 +111,10 @@
 }
 
 /* section 2 */
-.sec21 {
-    border: 2px solid aliceblue;
-}
 
 .sec21 h1 {
     color: var(--primary);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 32px;
     padding: 10px 0px;
     font-weight: 700
@@ -115,7 +122,7 @@
 
 .sec21 h2 {
     color: #000;
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 24px;
     font-weight: 700;
     padding: 10px 0px;
@@ -123,7 +130,7 @@
 
 .sec21 p {
     color: var(--Body-Text-Color, #1E1E1E);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -136,14 +143,14 @@
 
 .text1 h2 {
     color: var(--primary);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 32px;
     font-weight: 700;
 }
 
 .text1 p {
     color: var(--Body-Text-Color, #1E1E1E);
-    font-family: var(--font-family);
+    font-family: var(--Open-Sans);
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -151,13 +158,27 @@
 
 @media (min-width:760px) {
 
-    .text,
+    .text{
+        width: 40%;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+    }
+    .text h1{
+        font-size: 1.5rem;
+    }
     .form {
-        width: 45%;
+        width: 55%;
+        height: 500px;
+    }
+    .form form{
+        width: 80%;
     }
 
     .form img {
-        left: 195px;
+        left: 270px;
+        width: 100px;
+        top: -100px;
     }
 
     .do {
@@ -168,6 +189,8 @@
         width: 40%;
         margin: 0 auto;
     }
+
+    
 
     .text1,
     .form1 {
@@ -184,12 +207,20 @@
 @media (min-width:900px) {
     .form {
         height: 600px;
+        width: 100;
+    }
+    .form form{
+        height: 400px !important;
+    }
+
+    .text h1{
+        font-size: 2.5rem;
     }
 
     .for {
         width: 70%;
-        height: 300px;
-        margin: 160px auto;
+        height: 400px;
+        margin: 100px auto;
     }
 
     .for form {
@@ -198,8 +229,9 @@
     }
 
     .form img {
-        left: 320px;
-        top: -245px;
+        left: 430px;
+        top: -209px;
+        width: 180px;
     }
 
     .text {
@@ -219,20 +251,19 @@
     }
 
     .do {
-        width: 320px;
-        height: 320px;
+        width: 370px;
+        height: 370px;
     }
 
     .do p,
     .do h2 {
-        text-align: justify;
+        text-align: start;
         padding: 10px;
         width: 280px;
         margin: 0 auto;
     }
 
     .do img {
-        border: 2px solid firebrick;
         text-align: justify;
         align-items: start;
         margin-left: 20px;
@@ -247,13 +278,21 @@
         width: 27%;
     }
 
-    .sec21 h2,
+    .sec21 h2{
+        text-align: start;
+    }
+    
     .sec21 p {
-        text-align: justify;
+        text-align: start;
+        color: var(--Body-Text-Color, #1E1E1E);
+font-family: Open Sans;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
     }
 
     .sec21 img {
-        border: 1px solid lawngreen;
         text-align: justify;
         align-items: start;
         margin-left: 0px;
@@ -270,7 +309,7 @@
     }
 
     .sp1 {
-        margin-right: 360px;
+        margin-right: 420px;
     }
 
     .form1{
@@ -280,4 +319,8 @@
         width: 500px;
         text-align: justify;
     }
+
+
+
+   
 }

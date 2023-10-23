@@ -1,0 +1,100 @@
+.edit{
+    width: 50%;
+    margin: 0 auto;
+}
+.edit img{
+    width: 100%;
+}
+
+.upload{
+    width: 50px;
+    position: relative;
+    left: 200px;
+    top: -50px;
+}
+
+.shehu-edit-one{
+width: 95%;
+border-radius: 4px;
+background: var(--colors-primary, #FFF);
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+border: none;
+margin: 15px 0px;
+}
+
+.shehu-edit-one input{
+    border: none;
+    width: 100%;
+}
+
+.shehu-edit-on textarea{
+    height: 50px;
+    border: none;
+    width: 100%;
+}
+
+.shehu-edit label{
+    padding-left: 10px;
+}
+
+.shehu-edit-one input::placeholder{
+    padding-left: 10px;
+    color: #A6A6A6;
+font-family: var(--Open-Sans);
+font-size: 14px;
+font-weight: 300;
+}
+
+.shehu-edit-on textarea::placeholder{
+    padding-left: 10px;
+}
+
+.btn{
+    width: 50%;
+}
+
+@media (min-width:760px) {
+    .edit img{
+        width: 50%;
+        margin-left: 70px;
+    }
+    .edit{
+        width: 40%;
+    }
+    
+    .upload{
+        width: 50px;
+        position: relative;
+        left: 260px;
+        top: -50px;
+    }
+
+    .shehu-edit-one{
+        width: 48%;
+    }
+    .shehu-edit-on{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .shehu-all{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .link{
+        width: 30%;
+        margin: 0 auto;
+    }
+   
+    .btn{
+        width: 80%;
+    }
+}
+
+@media (min-width:900px) {
+    .upload{
+        left: 650px;
+        top: -60px;
+        width: 70px;
+    }
+}

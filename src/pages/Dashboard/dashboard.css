@@ -1,0 +1,122 @@
+.dash h4{
+   font-family: var(--Open-Sans);
+
+}
+.details img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.shehu-comment input{
+    border: none;
+    color: #4C4D50;
+font-family: Open Sans;
+font-size: 15px;
+font-weight: 600;
+}
+.ico{
+    margin-top:30px
+}
+
+
+
+.heart{
+   width:50px; height:50px;
+    margin-top:30px;
+    position:relative;
+    left:-25px;
+    font-size:20px
+}
+.heart p{
+    width:10px;
+    font-size:10px;
+    font-family: var(--Open-Sans);
+}
+
+.bt{
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 18px;
+border-radius: 8px;
+border: 2px solid var(--border);
+color: var(--border);
+background:#fff
+}
+
+.shehu-dash p{
+    color: #858585;
+font-family: var(--Open-Sans);
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.44px;
+}
+
+.tex p, .tex span{
+    color: #858585;
+    font-family: var(--Open-Sans);
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.44px;
+}
+
+.tex h3, h6{
+    font-family: var(--Open-Sans);
+}
+.shehu-img{
+    width:98%;
+    margin: 0 auto;
+}
+
+.shehu-img img{
+    width:100%;
+    
+}
+
+@media (min-width:760px) {
+
+.sidebar-shehu{
+        width: 15%;
+       margin-top: -3px;
+    }
+
+    .shehu-dash{
+        width: 85%;
+        margin-left: 115px;
+        padding-top: 100px;
+      }
+
+.bt{
+    padding: 7px 32px;
+}
+    .shehu-img{
+        width:100%
+    }
+
+    .shehu-img img{
+        width:98%
+    }
+
+    .shehu-dash h4{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+   
+    .shehu-dash p, .shehu-dash h4{
+        font-size: 22px;
+        width: 98%;
+    }
+   
+    .shehu-dash{
+    width: 85%;
+    margin-left: 214px;
+    padding-top: 150px;
+    }
+   
+    
+    
+  }
+  

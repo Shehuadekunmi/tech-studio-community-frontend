@@ -8,8 +8,6 @@
 box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
 :root {
   --primary: #1F2666;
   --bg: #DCE9FA;
@@ -17,4 +15,61 @@ box-sizing: border-box;
   --secondary: #1E1E1E;
   --Open-Sans: 'Open Sans', sans-serif;
   --black: #292929;
+ --border:#0266f4;
 }
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+.kk{
+  width: 100%;
+  }
+  .kk box-icon{
+  position: relative;
+  width: 15px;
+  left: 25px;
+  color: white;
+  top: 3px;
+  }
+
+
+
+  @media (min-width: 900px) {
+    .kk box-icon{
+      top: 20px !important;
+      width: 30px;
+      left: 33px;
+    }
+    /* .inp{
+      width: 380px;
+      border: 0.3px solid #FFFFFF;
+    height: 40px;
+    margin-top: 10px;
+    }
+    .dash{
+    width: 85%;
+    margin-left: 214px;
+    }
+    .tag img{
+      width: 40px;
+      height: 40px;
+    }
+    .tag p{
+      font-size: 10p;
+      width: 120px;
+    }
+    .mt{
+      width: 70%;
+    }
+    .tag select{
+      background: var(--primary);
+      border: none;
+      color: #FFF;
+      margin-bottom: 10px; margin-right: 20px;
+    } */
+  }
+  
