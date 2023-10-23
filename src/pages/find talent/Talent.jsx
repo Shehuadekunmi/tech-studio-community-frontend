@@ -1,11 +1,11 @@
 import './style.css'
 import FindtalentSec1 from '../../components/FindtalentSec1'
-import FindtalentSec2 from '../../components/FindtalentSec2'
+import FindtalentSec2 from "../../components/FindtalentSec2"
 
-const Index = () => {
+const Index = ({SetJobPosterData}) => {
   return (
-    <div className='container' >
-      <FindtalentSec1/>
+    <div className='container talenter' >
+      <FindtalentSec1 SetJobPosterData={SetJobPosterData}/>
       <FindtalentSec2/>
     </div>
   )

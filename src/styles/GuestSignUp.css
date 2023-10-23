@@ -1,0 +1,128 @@
+.guest-sign-up {
+  height: 100vh;
+}
+
+.frame-3 {
+  width: 50%;
+  height: 100%;
+}
+
+.brand-container {
+  width: 520px;
+  height: 481px;
+}
+
+.frame-3 {
+  background: var(--colors-hover, #0266f4);
+  height: 100%;
+}
+
+.frame-4 {
+  padding-inline: clamp(1rem, 5%, 4rem);
+  padding-block: 2rem;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.sign-up-content {
+  border-radius: 20px;
+  width: 100%;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: fit-content;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input,
+select {
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid rgba(29, 28, 28, 0.5);
+  background: var(--colors-primary, #fff);
+  outline: none;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown input {
+  width: 100%;
+}
+
+.dropdownIcon {
+  /* width: 7.364px; */
+  width: 12.865px;
+  height: 12.865px;
+  /* transform: rotate(-90deg); */
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
+.lineIcon {
+  width: 100%;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.password-container .eye {
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  width: 22px;
+}
+
+.error {
+  border: 2px solid red;
+  animation: shake 0.3s;
+}
+
+.community-group select {
+  padding-inline: 10px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  2% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  input {
+    height: 50px;
+  }
+
+  .frame-4 {
+    max-width: 50%;
+  }
+}
+
+
+.guest-sign-up-con input,.guest-sign-up-con select{
+  padding: 0 10px;
+}

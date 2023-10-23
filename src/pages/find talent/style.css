@@ -12,15 +12,15 @@
     font-weight: 400;
 }
 
-.form {
+.talenter .form {
     background-color: var(--bg);
 }
-.sec22{
+.talenter .sec22{
     background-color: var(--bg);
 
 }
-.form form,
-.form1 {
+.talenter .form form,
+.talenter .form1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,15 +32,15 @@
     z-index: 2 !important;
 }
 
-.form img {
+.talenter .form img {
     position: relative;
     top: -120px;
     left: 160px;
     z-index: 0 !important;
 }
 
-.form input,
-.form1 input {
+.talenter .form input,
+.talenter  .form1 input {
     width: 80%;
     margin: 0 auto;
     border-radius: 5px;
@@ -48,16 +48,16 @@
     height: 40px;
 }
 
-.button {
+.talenter .button {
     width: 80%;
     margin: 0 auto;
 }
 
-.btn {
+.talenter .btn {
     width: 100%;
 }
 
-.for {
+.talenter .for {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,20 +65,20 @@
 }
 
 /* section1 b */
-.two {
+.talenter .two {
     background-color: var(--bg2);
     height: 100%;
     padding: 30px 0px;
 }
 
-.two h1 {
+.talenter .two h1 {
     color: var(--primary);
     font-family: var(--font-family);
     font-size: 20px;
     font-weight: 700;
 }
 
-.do {
+.talenter .do {
     border-radius: 5px;
     background: var(--White-text, #FFF);
     width: 90%;
@@ -87,11 +87,11 @@
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.10);
 }
 
-.do img {
+.talenter .do img {
     margin-top: 20px;
 }
 
-.two h2 {
+.talenter .two h2 {
     border: 2px solid darkblue;
     font-family: Open Sans;
     font-size: 24px;
@@ -101,11 +101,11 @@
 }
 
 /* section 2 */
-.sec21 {
+.talenter .sec21 {
     border: 2px solid aliceblue;
 }
 
-.sec21 h1 {
+.talenter .sec21 h1 {
     color: var(--primary);
     font-family: var(--font-family);
     font-size: 32px;
@@ -113,7 +113,7 @@
     font-weight: 700
 }
 
-.sec21 h2 {
+.talenter .sec21 h2 {
     color: #000;
     font-family: var(--font-family);
     font-size: 24px;
@@ -121,7 +121,7 @@
     padding: 10px 0px;
 }
 
-.sec21 p {
+.talenter .sec21 p {
     color: var(--Body-Text-Color, #1E1E1E);
     font-family: var(--font-family);
     font-size: 15px;
@@ -130,18 +130,18 @@
     line-height: 22px;
 }
 
-.sec21 img {
+.talenter .sec21 img {
     margin: 10px auto;
 }
 
-.text1 h2 {
+.talenter .text1 h2 {
     color: var(--primary);
     font-family: var(--font-family);
     font-size: 32px;
     font-weight: 700;
 }
 
-.text1 p {
+.talenter .text1 p {
     color: var(--Body-Text-Color, #1E1E1E);
     font-family: var(--font-family);
     font-size: 16px;
@@ -149,89 +149,91 @@
     line-height: 26px;
 }
 
+
+
 @media (min-width:760px) {
 
-    .text,
-    .form {
+    .talenter .text,
+    .talenter .form {
         width: 45%;
     }
 
-    .form img {
+    .talenter .form img {
         left: 195px;
     }
 
-    .do {
+    .talenter .do {
         width: 40%;
     }
 
-    .hire {
-        width: 40%;
-        margin: 0 auto;
-    }
-
-    .text1,
-    .form1 {
+    .talenter .hire {
         width: 40%;
         margin: 0 auto;
     }
 
-    .text1 {
+    .talenter .text1,
+    .talenter .form1 {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .talenter .text1 {
         display: flex;
         align-items: center;
     }
 }
 
 @media (min-width:900px) {
-    .form {
+    .talenter .form {
         height: 600px;
     }
 
-    .for {
+    .talenter .for {
         width: 70%;
         height: 300px;
         margin: 160px auto;
     }
 
-    .for form {
+    .talenter .for form {
         height: 300px;
         margin-top: -14px;
     }
 
-    .form img {
+    .talenter .form img {
         left: 320px;
         top: -245px;
     }
 
-    .text {
+    .talenter .text {
         display: flex;
         align-items: center;
         width: 40%;
         margin: 0 auto;
     }
 
-    .text h1 {
+    .talenter .text h1 {
         width: 80%;
     }
 
-    .text p {
+    .talenter .text p {
         width: 505px;
         line-height: 30px;
     }
 
-    .do {
+    .talenter .do {
         width: 320px;
         height: 320px;
     }
 
-    .do p,
-    .do h2 {
+    .talenter .do p,
+    .talenter .do h2 {
         text-align: justify;
         padding: 10px;
         width: 280px;
         margin: 0 auto;
     }
 
-    .do img {
+    .talenter .do img {
         border: 2px solid firebrick;
         text-align: justify;
         align-items: start;
@@ -239,16 +241,16 @@
         display: flex;
     }
 
-    .two h1 {
+    .talenter .two h1 {
         font-size: 33px;
     }
 
-    .hire {
+    .talenter .hire {
         width: 27%;
     }
 
-    .sec21 h2,
-    .sec21 p {
+    .talenter .sec21 h2,
+    .talenter .sec21 p {
         text-align: justify;
     }
 
@@ -260,24 +262,42 @@
         display: flex;
     }
 
-    .sec21 {
+    .talenter .sec21 {
         width: 90%;
         margin: 0 auto;
     }
 
-    .sp {
+    .talenter .sp {
         margin-left: 40px;
     }
 
-    .sp1 {
+    .talenter .sp1 {
         margin-right: 360px;
     }
 
-    .form1{
+    .talenter .form1{
         height:500px;
     }
-    .text1 p, .text1 h2{
+    .talenter .text1 p, .text1 h2{
         width: 500px;
         text-align: justify;
     }
+}
+
+.error {
+    border: 2px solid red !important;
+    animation: shake 0.3s !important;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+  }
+
+.error::placeholder{
+    color: red  !important;
 }
