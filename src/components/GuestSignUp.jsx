@@ -202,7 +202,6 @@ const GuestSignUp = () => {
                   </div>
                   <div className="sign-up-last-name d-flex flex-column gap-1">
                     <label htmlFor="last-name">Last Name </label>
-
                     <input
                       className={errors.lastname ? "error" : ""}
                       name="lastname"

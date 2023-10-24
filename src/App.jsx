@@ -1,8 +1,9 @@
 import JobRequirements from './pages/JobRequirements'
 import "./App.css";
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './pages/lading page/Home'
 import Talent from './pages/find talent/Talent'
+import Profile from './pages/Profile/Profile'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Login from './components/Login'
 import GuestSignUp from "./components/GuestSignUp"
@@ -18,6 +19,9 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/talent" element={<Talent />} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path='/' element={<Home/>}/>
           <Route path="/talent" element={<Talent SetJobPosterData={SetJobPosterData}/>} />
           <Route path="/internalpage" element={<InternalPage />} />
