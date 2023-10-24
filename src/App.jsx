@@ -18,6 +18,7 @@ import NewPassword from "./components/NewPassword"
 import EmailConfirmation from "./pages/EmailConfirmation";
 import EmailResend from "./pages/EmailResend";
 import InternalPage from './pages/InternalPage';
+import ProjectUpload from './pages/Projectupload/ProjectUpload';
 
 function App() {
   const [jobPosterData, SetJobPosterData]= useState({})
@@ -44,6 +45,7 @@ function App() {
           <Route path="/GuestSignUp" element={<GuestSignUp />} />
           <Route path="/PasswordReset" element={<PasswordReset />} />
           <Route path="/NewPassword" element={<NewPassword />} />
+          <Route path='/projectupload' element={<ProjectUpload/>}/>
         </Routes>
       </Router>
     </>)

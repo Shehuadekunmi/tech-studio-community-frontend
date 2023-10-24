@@ -225,6 +225,10 @@
 }
 
 @media (min-width:900px) {
+    /* .shehu-dot img{
+        display: block;
+        border:  2px solid red;
+    } */
     .talenter .form {
         height: 600px;
         width: 100;
@@ -238,7 +242,7 @@
     }
 
     .talenter .for {
-        width: 70%;
+        width: 90%;
         height: 400px;
         margin: 100px auto;
     }
@@ -248,14 +252,15 @@
         margin-top: -14px;
     }
 
-    .form img {
+    /* .form img {
         left: 430px;
         top: -209px;
-        width: 180px;
-    }
+        width: 1820px;
+    } */
     .talenter .form img {
-        left: 320px;
-        top: -245px;
+        left: 380px;
+        top: -211px;
+        width: 180px;
     }
 
     .talenter .text {
@@ -274,31 +279,27 @@
         line-height: 30px;
     }
 
-    .do {
-        width: 370px;
-        height: 370px;
-    }
-
-    .do p,
-    .do h2 {
+    .talenter .do h2 {
+        width: 300px;
+        margin: 0 auto;
         text-align: start;
+        margin-left: 20px;
+        padding-top: 10px;
     }
     .talenter .do {
         width: 320px;
-        height: 320px;
+        height: 390px;
     }
 
-    .talenter .do p,
-    .talenter .do h2 {
-        text-align: justify;
-        padding: 10px;
+    .talenter .do p {
+        text-align: start;
         width: 280px;
         margin: 0 auto;
+        padding-top: 10px;
     }
 
     .do img 
     .talenter .do img {
-        border: 2px solid firebrick;
         text-align: justify;
         align-items: start;
         margin-left: 20px;
@@ -347,10 +348,9 @@ line-height: 22px;
         margin-left: 40px;
     }
 
-    .sp1 {
-        margin-right: 420px;
+
     .talenter .sp1 {
-        margin-right: 360px;
+        margin-right: 420px;
     }
 
     .talenter .form1{
@@ -382,5 +382,4 @@ line-height: 22px;
 
 .error::placeholder{
     color: red  !important;
-}
 }

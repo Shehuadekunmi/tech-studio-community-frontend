@@ -1,7 +1,10 @@
 
 .head{
     position: fixed !important;
-    margin-top: 1px !important;
+    width: 80%;
+    margin-left: 60px;
+    margin-top: -1px;
+    padding-top: 0px;
 }
 
 .head h1{
@@ -12,23 +15,20 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
-
-/* .dash{
-    width: 100%;
-    margin-left: 214p;
-    } */
   
   .head, .inp{
     background: var(--primary) !important;
     
   }
   
-  
   .inp{
     border-radius: 20px;
     border: 0.3px solid #FFFFFF;
   }
   
+  .kk input{
+    height: 30px;
+  }
   
   .inp::placeholder{
     padding-left: 35px;
@@ -40,22 +40,38 @@ line-height: normal;
   line-height: normal;
   }
   
-  
+  .shehu-head-tag img{
+    width: 40px;
+    height: 40px;
+  }
 
 
-
-
+  .tag select{
+    background: var(--primary);
+    border: none;
+    color: #FFF;
+    height: 23px;
+  }
 
 @media (min-width:760px) {
   .head{
-    width:85%;
-    margin-left: 114px;
+    width:84%;
+    margin-left: 126px;
+  }
+  .shehu-kk{
+    gap: 23.5rem;
   }
   
   }
 
-  
   @media (min-width: 900px) {
+
+    .shehu-kk{
+      gap: 0rem;
+    }
+    .kk input{
+      height: 40px;
+    }
     .kk box-icon{
       top: 20px !important;
       width: 30px;
@@ -87,6 +103,7 @@ line-height: normal;
       border: none;
       color: #FFF;
       margin-bottom: 10px; margin-right: 20px;
+      height: 60px;
     }
   }
   

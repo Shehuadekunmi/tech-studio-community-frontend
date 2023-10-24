@@ -57,7 +57,6 @@ const initialLike = JSON.parse(window.localStorage.getItem('likes')) || 1;
           <p className="feed">News Feed</p>
 
           <div>
-
             <div className="details d-flex gap-3">
               <img src={details} alt="" />
               <div className="tex ">

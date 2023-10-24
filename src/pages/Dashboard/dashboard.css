@@ -1,12 +1,24 @@
 .dash h4{
    font-family: var(--Open-Sans);
+}
 
+.shehu-dash{
+    padding-top: 100px;
+    width: 95%;
+    margin: 0 auto;
 }
 .details img{
     width: 40px;
     height: 40px;
 }
 
+.details h3{
+    font-size: 14px;
+}
+
+.shehu-dash h4{
+    font-size: 16px;
+}
 
 .shehu-comment input{
     border: none;
@@ -18,7 +30,6 @@ font-weight: 600;
 .ico{
     margin-top:30px
 }
-
 
 
 .heart{
@@ -71,7 +82,6 @@ letter-spacing: 0.44px;
 
 .shehu-img img{
     width:100%;
-    
 }
 
 @media (min-width:760px) {
@@ -111,12 +121,14 @@ letter-spacing: 0.44px;
     }
    
     .shehu-dash{
-    width: 85%;
-    margin-left: 214px;
+    width: 83%;
+    margin-left: 234px;
     padding-top: 150px;
     }
    
-    
+    .tex h3, .shehu-dash h4{
+        font-size: 23px;
+    }
     
   }
   

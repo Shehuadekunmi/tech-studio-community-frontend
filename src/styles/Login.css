@@ -82,6 +82,17 @@
 }
 
 
+@media (min-width:760px) {
+  .shehu-login{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .shehu-or{
+    padding-top: 30px;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .login-email input,
   .login-password input {
@@ -104,4 +115,9 @@
   .btn-primary {
     height: 50px;
   }
+
+  .shehu-or{
+    padding-top: 0px;
+  }
+  
 }

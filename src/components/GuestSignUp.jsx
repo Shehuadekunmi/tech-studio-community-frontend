@@ -302,7 +302,7 @@ const GuestSignUp = () => {
                     )}
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary d-block mt-3">
+                <button type="submit" className="btn btn-primary d-block mt-3 w-100">
                   {loading?<Loader/>:<strong>Register</strong>}
                 </button>
 

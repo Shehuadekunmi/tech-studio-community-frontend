@@ -74,7 +74,7 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
             </p>
           </div>
         </div>
-        <div className="form">
+        <div className="form shehu-dot">
           <div className="for">
             <form onSubmit={handleSubmit}>
               <input
