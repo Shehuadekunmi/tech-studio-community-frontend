@@ -111,7 +111,7 @@ color: #fff;
         font-size: 0.8rem;
     }
     .Master p{
-      width: 280px;
+      width: 275px;
     }
    
     .menu-list b{
@@ -125,7 +125,7 @@ color: #fff;
   }
   .Master p{
     width: 270px;
-    padding-inline: 1rem;
+    padding-left: 0.8rem;
   }
   .news-part{
     width: 400px;
@@ -133,16 +133,22 @@ color: #fff;
   }
   .menu-list{
     position: relative;
-    right: 24%;
+    right: 20%;
   }
 }
 @media(max-width: 425px) {
   .Master{
-    margin-right:20px ;
+    margin-right:30px ;
   }
+ .Master p{
+  padding-right: 5px;
+ }
+ .news-part{
+  margin-right: -22%;
+ }
 }
 @media (max-width:320px) {
   .news-part input,button,h3{
-    margin-left: -6%;
+    margin-right: -8%;
   }
 }
