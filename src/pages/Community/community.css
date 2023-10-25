@@ -5,7 +5,7 @@
     margin-top: 10px;
 }
 .shehu-card{
-    background: var(--bg);
+    background: var(--bg) !important;
     margin: 20px 0px;
     font-family: var(--Open-Sans);
 }
@@ -37,11 +37,15 @@
 
 
 
-
-
 @media (min-width:900px) {
     .shehu-card-body{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .shehu-comm{
+        width: 80% !important;
+
     }
 }

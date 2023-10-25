@@ -4,8 +4,7 @@ import 'boxicons'
 import '../styles/sidebar.css'
 import { Icon } from '@iconify/react';
 import comm from '../assets/comm.png'
-
-import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 const Sidebar = () => {
 
@@ -16,12 +15,10 @@ const Sidebar = () => {
   return (
     <div className='container'>
 
-
       <section>
      <div  className="shehu-mob">
         <box-icon name='menu-alt-left' color='#ffffff'  onClick={handleShow}></box-icon>
      </div>
-     
 
       <Offcanvas show={show} onHide={handleClose} className=' w-75'>
         <Offcanvas.Header closeButton className='shehu-mobile'>

@@ -3,17 +3,18 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import prof from '../../assets/prof.png'
 import '../Community/community.css'
+import { Link } from 'react-router-dom';
 
 const Community = () => {
   return (
-    <div className='container'>Community
+    <div className='container shehu-comm'>
         <div className="shehu-title my-5 d-flex justify-content-between">
             <div className='d-md-flex gap-md-3'>
             <p>Web Development</p>
             <p>Product Design</p>
             <p>Data Analysis</p>
             </div>
-           <button></button>
+           {/* <button></button> */}
         </div>
 
 
@@ -24,7 +25,7 @@ const Community = () => {
         <h2>Ola Jack</h2>
         <h5>Data Analysis</h5>
         <h5>Cohort - August, 2023. </h5>
-        <Button variant="primary">View Profile</Button>
+      <Link to='/profile'>  <Button variant="primary">View Profile</Button> </Link>
       </Card.Body>
     </Card>
 
@@ -34,7 +35,7 @@ const Community = () => {
         <h2>Ola Jack</h2>
         <h5>Data Analysis</h5>
         <h5>Cohort - August, 2023. </h5>
-        <Button variant="primary">View Profile</Button>
+      <Link to='/profile'>  <Button variant="primary">View Profile</Button> </Link>
       </Card.Body>
     </Card>
 
@@ -44,7 +45,7 @@ const Community = () => {
         <h2>Ola Jack</h2>
         <h5>Data Analysis</h5>
         <h5>Cohort - August, 2023. </h5>
-        <Button variant="primary">View Profile</Button>
+      <Link to='/profile'>  <Button variant="primary">View Profile</Button> </Link>
       </Card.Body>
     </Card>
 
@@ -54,7 +55,7 @@ const Community = () => {
         <h2>Ola Jack</h2>
         <h5>Data Analysis</h5>
         <h5>Cohort - August, 2023. </h5>
-        <Button variant="primary">View Profile</Button>
+      <Link to='/profile'>  <Button variant="primary">View Profile</Button> </Link>
       </Card.Body>
     </Card>
     </div>

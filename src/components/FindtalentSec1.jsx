@@ -100,7 +100,7 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
               />
               <br />
               <div className="button">
-                <button className="btn btn-primary" type="submit">
+                <button className="btn btn-primary w-100" type="submit">
                   {loading ? <Loader /> : "Get Started"}
                 </button>
               </div>

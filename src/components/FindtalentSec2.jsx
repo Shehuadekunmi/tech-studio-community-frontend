@@ -68,7 +68,7 @@ const FindtalentSec2 = () => {
 
                             <input type="text" placeholder='What role do you want to fill?' className='my-3 mb-lg-5 ps-2' /> <br />
 
-                            <div className="button"> <Link><button className='btn btn-primary'>Get Started</button></Link> </div>  <br />
+                            <div className="button"> <Link><button className='btn btn-primary w-100'>Get Started</button></Link> </div>  <br />
 
                         </form>
                     </div>
