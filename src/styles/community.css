@@ -1,0 +1,51 @@
+.custom-container {
+  max-width: 1400px;
+  padding-inline: 10px;
+  margin-inline: auto;
+}
+
+.community {
+  padding-block: 50px;
+}
+
+.community-header .select-field select {
+  border: 1px solid #0266f4;
+  color: #0266f4;
+  padding-inline: 15px;
+  font-size: 18.512px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.37px;
+  cursor: pointer;
+}
+
+.community-header .heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.community-header .heading .search {
+  position: relative;
+}
+
+.community-header .heading .search input {
+  width: 324px;
+  border-radius: 10px;
+  border: 1px solid #606060;
+  background: var(--colors-primary, #fff);
+  padding-block: 10px;
+  padding-inline: 10px;
+  color: #606060;
+  font-size: 18.512px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.37px;
+}
+
+.community-header .heading .search img {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 30%;
+}

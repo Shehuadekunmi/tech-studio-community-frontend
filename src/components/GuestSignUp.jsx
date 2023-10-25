@@ -296,14 +296,12 @@ const GuestSignUp = () => {
                       alt=""
                     />
                     {errors.confirmPassword && (
-                      <p className="error-message">
-                        {errors.confirmPassword}
-                      </p>
+                      <p className="error-message">{errors.confirmPassword}</p>
                     )}
                   </div>
                 </div>
                 <button type="submit" className="btn btn-primary d-block mt-3">
-                  {loading?<Loader/>:<strong>Register</strong>}
+                  {loading ? <Loader /> : <strong>Register</strong>}
                 </button>
 
                 <div className="register d-flex gap-2 justify-content-center">

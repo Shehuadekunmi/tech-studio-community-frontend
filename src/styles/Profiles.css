@@ -1,98 +1,60 @@
-.spread{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-.sl{
-    width: 199px;
-    height: 38px;
-    border-radius: 10px;
-    color: #0266F4;
-    border-color: #0266F4;
-    font-weight: bold;
-    font-size: medium;
-}
-.ip{
-width: 244px;
-    height: 38px;
-    border-radius: 10px;
-        font-weight: bold;
-            font-size: medium;
-}
-.search {
-    position: relative;
-    right: 30px;
-}
-.card{
-    background-color: #D9D9D9;
-    width: 295px;
-    height: 264px;
-    border: 1px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: black;
-}
-.card img{
-    width: 160px;
-        height: 153.33px;
-        border: 1px solid black;
-        border-radius: 50%;
-}
-.card h3{
-    
-    font-size: 18px;
-   font-weight: 800;
-   line-height: 24.51px;
-}
-.card h4{
-    font-size:16px ;
-    font-weight: 600;
-    line-height: 21.79px;
-}
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.profiles {
+  padding-block: 51px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.pagination a {
-    margin: 0 5px;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
+.profile-card {
+  height: 264px;
+  /* margin-bottom: 3.6875rem; */
+  margin-bottom: 5rem;
 }
 
-.pagination a.active {
-    background-color: #333;
-    color: #fff;
+.profile-card-container {
+  background-color: #d2d4e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1rem;
+  height: fit-content;
 }
 
-/* Media query for small screens */
-@media (max-width: 768px) {
-    .pagination {
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    .pagination a {
-        margin: 5px;
-    }
-    .sl{
-        width: 100%;
-    }
-    .ip{
-        width: 80%;
-        margin-right: 40px;
-    }
-    .spread{
-        gap: 60px;
-    }
-    .search{
-        display: none;
-    }
-
+.profile-card-image {
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
+.profile-card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-card p {
+  margin-bottom: 0;
+}
+
+.profile-card-name {
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.profile-card-community {
+  color: #0266f4;
+  /* color: #000; */
+  /* font-size: 16px; */
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-card-cohort {
+  color: #000;
+  /* font-size: 14px; */
+  font-size: 10px;
+  font-weight: 400;
+}

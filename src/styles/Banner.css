@@ -1,27 +1,48 @@
-.ban{
-    background-image: url('../src/assets/tc.png');
-    background-position: center;
-    background-size: auto;
-    height: 80vh;
-    width: 100%;
-}
-.inner div{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding-top: 100px;
-    font-size: x-large;
-}
-.inner h2{
-    color: red;
+.ban {
+  background-image: url("../src/assets/tc.png");
+  background-position: top center;
+  background-size: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 768px){
-    .inner div{
-        font-size: large;
-    }
-    .ban{
-        height: 60vh;
-    }
+.inner div {
+  text-align: center;
+  color: white;
+  max-width: 1191px;
+  margin-inline: auto;
+  /* padding-inline: 10px; */
+  font-size: x-large;
+}
+
+.inner h1 {
+  color: var(--colors-primary, #fff);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.inner h2 {
+  color: #ff031f;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 10px 0 25px 0;
+}
+
+.inner h3 {
+  color: var(--colors-primary, #fff);
+  font-size: 35px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .inner div {
+    font-size: large;
+  }
+  .ban {
+    height: 60vh;
+  }
 }

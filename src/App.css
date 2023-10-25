@@ -5,44 +5,38 @@
   width: 100%;
   margin: 0;
   padding: 0;
-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 :root {
-  --primary: #1F2666;
-  --bg: #DCE9FA;
-  --bg2: #F5F6FA;
-  --secondary: #1E1E1E;
-  --Open-Sans: 'Open Sans', sans-serif;
+  --primary: #1f2666;
+  --bg: #dce9fa;
+  --bg2: #f5f6fa;
+  --secondary: #1e1e1e;
+  --Open-Sans: "Open Sans", sans-serif;
   --black: #292929;
- --border:#0266f4;
+  --border: #0266f4;
 }
 
-body{
-  font-family: 'Open Sans', sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
-
-
-
-.kk{
+.kk {
   width: 100%;
-  }
-  .kk box-icon{
+}
+.kk box-icon {
   position: relative;
   width: 15px;
   left: 25px;
   color: white;
   top: 3px;
+}
+
+@media (min-width: 900px) {
+  .kk box-icon {
+    top: 20px !important;
+    width: 30px;
+    left: 33px;
   }
-
-
-
-  @media (min-width: 900px) {
-    .kk box-icon{
-      top: 20px !important;
-      width: 30px;
-      left: 33px;
-    }
-  }
+}
