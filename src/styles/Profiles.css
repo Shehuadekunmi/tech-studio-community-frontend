@@ -1,5 +1,5 @@
 .profiles {
-  padding-block: 51px;
+  padding-top: 51px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -47,14 +47,12 @@
 .profile-card-community {
   color: #0266f4;
   /* color: #000; */
-  /* font-size: 16px; */
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .profile-card-cohort {
   color: #000;
-  /* font-size: 14px; */
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 14px;
+    font-weight: 400;
 }

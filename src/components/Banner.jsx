@@ -3,7 +3,7 @@ import "../styles/Banner.css";
 
 const Banner = () => {
   return (
-    <div className="ban">
+    <div className="banner">
       <section className="inner">
         <div>
           <h1 className="fw-bold">Explore Community</h1>
