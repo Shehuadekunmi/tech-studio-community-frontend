@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import PasswordResetModal from "./PasswordResetModal";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import MobileNav from "./MobileNav";
 
 const GuestSignUp = () => {
   const apiURL = "https://techstudiocommunity.onrender.com";
@@ -176,159 +177,164 @@ const GuestSignUp = () => {
           </div>
         </div>
 
-        <div className="frame-4 d-flex">
-          <section className="sign-up-content">
-            <div className="blue-top w-100"></div>
-            <div className="login-content-padding">
-              <div className="login-heading mb-4">
-                <h1 className="fw-bold">Sign Up</h1>
-                <p>Enter details to create account.</p>
-              </div>
-              <form action="" onSubmit={handleSubmit} name="">
-                <div className="guest-name d-lg-flex justify-content-between">
-                  <div className="sign-up-first-name d-flex flex-column gap-1">
-                    <label htmlFor="first-name">First Name</label>
-                    <input
-                      className={errors.firstname ? "error" : ""}
-                      name="firstname"
-                      type="text"
-                      value={formData.firstname}
-                      id="first-name"
-                      onChange={handleFieldChange}
-                    />
-                    {errors.firstname && (
-                      <p className="error-message">{errors.firstname}</p>
-                    )}
-                  </div>
-                  <div className="sign-up-last-name d-flex flex-column gap-1">
-                    <label htmlFor="last-name">Last Name </label>
-                    <input
-                      className={errors.lastname ? "error" : ""}
-                      name="lastname"
-                      type="text"
-                      value={formData.lastname}
-                      id="last-name"
-                      onChange={handleFieldChange}
-                    />
-                    {errors.lastname && (
-                      <p className="error-message">{errors.lastname}</p>
-                    )}
-                  </div>
+        <div className="frame-4">
+          <MobileNav />
+          <div className="d-flex">
+            <section className=" sign-up-content">
+              <div className="blue-top w-100"></div>
+              <div className="login-content-padding">
+                <div className="login-heading mb-4">
+                  <h1 className="fw-bold">Sign Up</h1>
+                  <p>Enter details to create account.</p>
                 </div>
-                <div className="community-group d-flex flex-column gap-1">
-                  <label htmlFor="community">Community Group</label>
-                  <select
-                    name="community"
-                    id="community"
-                    className={errors.community ? "error" : ""}
-                    value={formData.community}
-                    onChange={handleFieldChange}
+                <form action="" onSubmit={handleSubmit} name="">
+                  <div className="guest-name d-lg-flex justify-content-between">
+                    <div className="sign-up-first-name d-flex flex-column gap-1">
+                      <label htmlFor="first-name">First Name</label>
+                      <input
+                        className={errors.firstname ? "error" : ""}
+                        name="firstname"
+                        type="text"
+                        value={formData.firstname}
+                        id="first-name"
+                        onChange={handleFieldChange}
+                      />
+                      {errors.firstname && (
+                        <p className="error-message">{errors.firstname}</p>
+                      )}
+                    </div>
+                    <div className="sign-up-last-name d-flex flex-column gap-1">
+                      <label htmlFor="last-name">Last Name </label>
+                      <input
+                        className={errors.lastname ? "error" : ""}
+                        name="lastname"
+                        type="text"
+                        value={formData.lastname}
+                        id="last-name"
+                        onChange={handleFieldChange}
+                      />
+                      {errors.lastname && (
+                        <p className="error-message">{errors.lastname}</p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="community-group d-flex flex-column gap-1">
+                    <label htmlFor="community">Community Group</label>
+                    <select
+                      name="community"
+                      id="community"
+                      className={errors.community ? "error" : ""}
+                      value={formData.community}
+                      onChange={handleFieldChange}
+                    >
+                      <option value={""} disabled>
+                        Select Community
+                      </option>
+                      {communityData &&
+                        communityData.map((item) => {
+                          return (
+                            <option key={item.id} value={item.id}>
+                              {item.name}
+                            </option>
+                          );
+                        })}
+                    </select>
+                    {errors.community && (
+                      <p className="error-message">{errors.community}</p>
+                    )}
+                  </div>
+                  <div className="sign-up-email d-flex flex-column gap-1">
+                    <label htmlFor="email">Email Address &nbsp;</label>
+                    <input
+                      name="email"
+                      className={errors.email ? "error" : ""}
+                      type="text"
+                      value={formData.email}
+                      id="email"
+                      onChange={handleFieldChange}
+                    />
+                    {errors.email && (
+                      <p className="error-message">{errors.email}</p>
+                    )}
+                  </div>
+                  <div className="sign-up-password d-flex flex-column gap-1">
+                    <label htmlFor="password">Password &nbsp;</label>
+                    <div className="password-container">
+                      <input
+                        name="password"
+                        className={errors.password ? "error" : ""}
+                        type={reveal ? "text" : "password"}
+                        id="password"
+                        value={formData.password}
+                        onChange={handleFieldChange}
+                      />
+                      <img
+                        className="eye"
+                        onClick={handleReveal}
+                        src={reveal ? eyeclose : eyeopen}
+                        alt=""
+                      />
+                      {errors.password && (
+                        <p className="error-message">{errors.password}</p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="sign-up-confirm-password-password d-flex flex-column gap-1">
+                    <label htmlFor="confirm-password">
+                      Confirm Password &nbsp;
+                    </label>
+                    <div className="password-container">
+                      <input
+                        name="confirmPassword"
+                        className={errors.confirmPassword ? "error" : ""}
+                        type={reveal2 ? "text" : "password"}
+                        id="confirm-password"
+                        value={formData.confirmPassword}
+                        onChange={handleFieldChange}
+                      />
+                      <img
+                        className="eye"
+                        src={reveal2 ? eyeclose : eyeopen}
+                        onClick={handleReveal2}
+                        alt=""
+                      />
+                      {errors.confirmPassword && (
+                        <p className="error-message">
+                          {errors.confirmPassword}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-primary d-block mt-3 w-100"
                   >
-                    <option value={""} disabled>
-                      Select Community
-                    </option>
-                    {communityData &&
-                      communityData.map((item) => {
-                        return (
-                          <option key={item.id} value={item.id}>
-                            {item.name}
-                          </option>
-                        );
-                      })}
-                  </select>
-                  {errors.community && (
-                    <p className="error-message">{errors.community}</p>
-                  )}
-                </div>
-                <div className="sign-up-email d-flex flex-column gap-1">
-                  <label htmlFor="email">Email Address &nbsp;</label>
-                  <input
-                    name="email"
-                    className={errors.email ? "error" : ""}
-                    type="text"
-                    value={formData.email}
-                    id="email"
-                    onChange={handleFieldChange}
-                  />
-                  {errors.email && (
-                    <p className="error-message">{errors.email}</p>
-                  )}
-                </div>
-                <div className="sign-up-password d-flex flex-column gap-1">
-                  <label htmlFor="password">Password &nbsp;</label>
-                  <div className="password-container">
-                    <input
-                      name="password"
-                      className={errors.password ? "error" : ""}
-                      type={reveal ? "text" : "password"}
-                      id="password"
-                      value={formData.password}
-                      onChange={handleFieldChange}
-                    />
-                    <img
-                      className="eye"
-                      onClick={handleReveal}
-                      src={reveal ? eyeclose : eyeopen}
-                      alt=""
-                    />
-                    {errors.password && (
-                      <p className="error-message">{errors.password}</p>
-                    )}
+                    {loading ? <Loader /> : <strong>Register</strong>}
+                  </button>
+                  <div className="register d-flex gap-2 justify-content-center">
+                    <p className="text-center">Already have an account?</p>
+                    <Link to={"/Login"} className="text-decoration-none">
+                      Login
+                    </Link>
+                  </div>
+                </form>
+                <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
+                  <div>
+                    <img className="lineIcon" src={lineIcon} alt="" />
+                  </div>
+                  <p className="fw-bold m-0">0R</p>
+                  <div>
+                    <img className="lineIcon" src={lineIcon} alt="" />
                   </div>
                 </div>
-                <div className="sign-up-confirm-password-password d-flex flex-column gap-1">
-                  <label htmlFor="confirm-password">
-                    Confirm Password &nbsp;
-                  </label>
-                  <div className="password-container">
-                    <input
-                      name="confirmPassword"
-                      className={errors.confirmPassword ? "error" : ""}
-                      type={reveal2 ? "text" : "password"}
-                      id="confirm-password"
-                      value={formData.confirmPassword}
-                      onChange={handleFieldChange}
-                    />
-                    <img
-                      className="eye"
-                      src={reveal2 ? eyeclose : eyeopen}
-                      onClick={handleReveal2}
-                      alt=""
-                    />
-                    {errors.confirmPassword && (
-                      <p className="error-message">{errors.confirmPassword}</p>
-                    )}
-                  </div>
-                </div>
-                <button type="submit" className="btn btn-primary d-block mt-3">
-                  {loading ? <Loader /> : <strong>Register</strong>}
-                </button>
-
-                <div className="register d-flex gap-2 justify-content-center">
-                  <p className="text-center">Already have an account?</p>
-                  <Link to={"/Login"} className="text-decoration-none">
-                    Login
-                  </Link>
-                </div>
-              </form>
-
-              <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
-                <div>
-                  <img className="lineIcon" src={lineIcon} alt="" />
-                </div>
-                <p className="fw-bold m-0">0R</p>
-                <div>
-                  <img className="lineIcon" src={lineIcon} alt="" />
+                <div className="social-icons d-flex justify-content-center gap-3">
+                  <img className="img-fluid" src={twitterIcon} alt="" />
+                  <img className="img-fluid" src={facebookIcon} alt="" />
+                  <img className="img-fluid" src={googleIcon} alt="" />
                 </div>
               </div>
-
-              <div className="social-icons d-flex justify-content-center gap-3">
-                <img className="img-fluid" src={twitterIcon} alt="" />
-                <img className="img-fluid" src={facebookIcon} alt="" />
-                <img className="img-fluid" src={googleIcon} alt="" />
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
       {modal.status !== "" && modal.message !== "" && (

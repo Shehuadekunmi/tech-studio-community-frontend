@@ -11,17 +11,18 @@ import { useAuth } from "../contextData/DataContext";
 import LoginInfoModal from "./LoginInfoModal";
 import Alert from "./Alert";
 import Loader from "./Loader";
+import MobileNav from "./MobileNav";
 
 const Login = () => {
   const apiURL = "https://techstudiocommunity.onrender.com";
-  const { login } = useAuth()
-  const navigate = useNavigate()
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState({ status: "", message: "" });
-  const [alert, setAlert] = useState(false)
+  const [alert, setAlert] = useState(false);
 
   const validateForm = () => {
     const errorsObject = {};
@@ -47,13 +48,12 @@ const Login = () => {
     const validationErrors = validateForm();
 
     if (Object.keys(validationErrors).length === 0) {
-      
       try {
         setLoading(true);
 
         var requestData = {
           email: email,
-          password: password
+          password: password,
         };
 
         var requestOptions = {
@@ -64,10 +64,7 @@ const Login = () => {
           body: JSON.stringify(requestData),
         };
 
-        const response = await fetch(
-          `${apiURL}/auth/login/`,
-          requestOptions
-        );
+        const response = await fetch(`${apiURL}/auth/login/`, requestOptions);
 
         if (!response.ok) {
           const errorData = await response.json();
@@ -75,20 +72,17 @@ const Login = () => {
         }
 
         const result = await response.json();
-        login(result.token)
-        navigate("/internalpage")
-
+        login(result.token);
+        navigate("/internalpage");
       } catch (error) {
-
-        if (error.message === 'Invalid credentials'){
-          setAlert(true)
-          setPassword("")
-          setEmail("")
-            setTimeout(() => {
-              setAlert(false)
-            }, 6000);
-        }
-        else{
+        if (error.message === "Invalid credentials") {
+          setAlert(true);
+          setPassword("");
+          setEmail("");
+          setTimeout(() => {
+            setAlert(false);
+          }, 6000);
+        } else {
           setModal((prevModal) => ({
             ...prevModal,
             status: false,
@@ -98,7 +92,6 @@ const Login = () => {
       } finally {
         setLoading(false);
       }
-
     } else {
       setErrors(validationErrors);
     }
@@ -106,96 +99,101 @@ const Login = () => {
 
   return (
     <div className="position-relative">
-      {alert && <Alert message={"Invalid credentials was entered. Try again"}/>}
-    <div className="login d-flex">
-      <div className="frame-1 d-none d-lg-flex align-items-center">
-        <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
-          <img src={techstudioLogo} alt="" />
-          <div className="brand-container">
-            <img className="img-fluid w-100" src={brandPicture} alt="" />
+      {alert && (
+        <Alert message={"Invalid credentials was entered. Try again"} />
+      )}
+      <div className="login d-flex">
+        <div className="frame-1 d-none d-lg-flex align-items-center">
+          <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
+            <img src={techstudioLogo} alt="" />
+            <div className="brand-container">
+              <img className="img-fluid w-100" src={brandPicture} alt="" />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="frame-2 d-flex align-items-center">
-        <section className="login-content">
-          <div className="blue-top w-100"></div>
-          <div className="login-content-padding">
-            <div className="login-heading mb-4">
-              <h1 className="fw-bold">Welcome Back!</h1>
-              <p>Let’s Help You Get Into Your Account.</p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="form">
-              <div className="login-email d-flex flex-column gap-3">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  className={errors.email ? "error" : ""}
-                  name="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    {
-                      errors.email = "";
-                    }
-                  }}
-                />
-                {errors.email && (
-                  <p className="error-message">{errors.email}</p>
-                )}
+        <div className="frame-2">
+          <MobileNav/>
+          <div className="d-flex align-items-center">
+            <section className="login-content">
+              <div className="blue-top w-100"></div>
+              <div className="login-content-padding">
+                <div className="login-heading mb-4">
+                  <h1 className="fw-bold">Welcome Back!</h1>
+                  <p>Let’s Help You Get Into Your Account.</p>
+                </div>
+                <form onSubmit={handleSubmit} className="form w-100">
+                  <div className="login-email d-flex flex-column gap-3">
+                    <label htmlFor="email">Email Address</label>
+                    <input
+                      className={errors.email ? "error" : ""}
+                      name="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        {
+                          errors.email = "";
+                        }
+                      }}
+                    />
+                    {errors.email && (
+                      <p className="error-message">{errors.email}</p>
+                    )}
+                  </div>
+                  <div className="login-password d-flex flex-column gap-3">
+                    <label htmlFor="password">Password</label>
+                    <input
+                      className={errors.password ? "error" : ""}
+                      type="password"
+                      name="password"
+                      id="password"
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                        {
+                          errors.password = "";
+                        }
+                      }}
+                    />
+                    {errors.password && (
+                      <p className="error-message">{errors.password}</p>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-primary d-block mt-3 w-100"
+                  >
+                    {loading ? <Loader /> : <strong>Login</strong>}
+                  </button>
+                  <div className="register d-flex gap-2 justify-content-center pt-2">
+                    <p className="text-center">New User?</p>
+                    <Link
+                      to={"/GuestSignUp"}
+                      className="text-decoration-none"
+                      href="#"
+                    >
+                      Register.
+                    </Link>
+                  </div>
+                </form>
+                <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
+                  <div>
+                    <img className="lineIcon" src={lineIcon} alt="" />
+                  </div>
+                  <p className="fw-bold m-0">0R</p>
+                  <div>
+                    <img className="lineIcon" src={lineIcon} alt="" />
+                  </div>
+                </div>
+                <div className="social-icons d-flex justify-content-center gap-3">
+                  <img className="img-fluid" src={twitterIcon} alt="" />
+                  <img className="img-fluid" src={facebookIcon} alt="" />
+                  <img className="img-fluid" src={googleIcon} alt="" />
+                </div>
               </div>
-
-              <div className="login-password d-flex flex-column gap-3">
-                <label htmlFor="password">Password</label>
-                <input
-                  className={errors.password ? "error" : ""}
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                    {
-                      errors.password = "";
-                    }
-                  }}
-                />
-                {errors.password && (
-                  <p className="error-message">{errors.password}</p>
-                )}
-              </div>
-
-              <button type="submit" className="btn btn-primary d-block mt-3">
-                {loading?<Loader/>:<strong>Login</strong>}
-              </button>
-              <div className="register d-flex gap-2 justify-content-center pt-2">
-                <p className="text-center">New User?</p>
-                <Link
-                  to={"/GuestSignUp"}
-                  className="text-decoration-none"
-                  href="#"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </form>
-            <div className="d-flex gap-1 justify-content-center align-items-center mt-2 mb-4">
-              <div>
-                <img className="lineIcon" src={lineIcon} alt="" />
-              </div>
-              <p className="fw-bold m-0">0R</p>
-              <div>
-                <img className="lineIcon" src={lineIcon} alt="" />
-              </div>
-            </div>
-            <div className="social-icons d-flex justify-content-center gap-3">
-              <img className="img-fluid" src={twitterIcon} alt="" />
-              <img className="img-fluid" src={facebookIcon} alt="" />
-              <img className="img-fluid" src={googleIcon} alt="" />
-            </div>
+            </section>
           </div>
-        </section>
-      </div>
+        </div>
       </div>
       {modal.status !== "" && modal.message !== "" && (
         <LoginInfoModal message={modal.message} status={modal.status} />
