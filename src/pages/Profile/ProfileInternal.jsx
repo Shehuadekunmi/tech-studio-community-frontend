@@ -54,7 +54,7 @@ const Profile = () => {
              </div>
 
              <div className="third">
-                <Link> <button className='btn btn-primary'> Edit Profile</button></Link>
+                <Link to={'/edit'}> <button className='btn btn-primary'> Edit Profile</button></Link>
              </div>
           </section>
 
