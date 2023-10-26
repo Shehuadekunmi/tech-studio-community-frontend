@@ -21,7 +21,7 @@
 .upload{
     width: 50px;
     position: relative;
-    left: 200px;
+    left: 180px;
     top: -50px;
 }
 
@@ -116,7 +116,7 @@ font-weight: 300;
 
 @media (min-width:900px) {
     .upload{
-        left: 650px;
+        left: 610px;
         top: -60px;
         width: 70px;
     }
