@@ -5,7 +5,6 @@
 .shehu-mobile{
     background: var(--primary);
     display: block;
-    /* position: fixed; */
 }
 
 .movie select{
@@ -23,9 +22,11 @@
 .shehu-mob{
     background: var(--primary);
     width: 20%;
-    height: 60px;
+    height: 63px;
     position: fixed;
     margin-left: -11px;
+    margin-top: -3px;
+    z-index: 100;
 }
 
 .tv span, .hom span, .up span, .play span, .img span, .movie span {
@@ -57,10 +58,7 @@ width: 20px;
     .shehu-mob{
         display: none;
     }
-    .sidebar{
-        height: 100v;
-        /* position: fixed; */
-    }
+   
     
     .tv span, .hom span, .up span, .play span, .img span, .movie span {
         font-family:'Open-Sans';
@@ -81,6 +79,7 @@ width: 20px;
         flex-direction: column;
         align-items: center;
         background: var(--primary);
+        margin-left: -10px;
     }
     
     
@@ -124,7 +123,7 @@ width: 20px;
         font-size: 10px;
     }
     .tv{
-        margin-top: 90px;
+        margin-top: 60px;
     }
 
 }

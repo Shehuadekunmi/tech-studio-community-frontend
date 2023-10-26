@@ -5,18 +5,29 @@ import prof4 from '../../assets/prof4.png'
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import '../profile/profile.css'
+import Sidebar from '../../components/Sidebar'
+import HeaderDashboard from '../../components/HeaderDashboard';
 
 
 const Profile = () => {
   return (
-    <div className='container'>
-        profile
-        <div className="shehu-profile-img">
+    <div className='contain'>
+        <div className="sidebar-shehu">
+          <Sidebar />
+         </div>
+        <section>
+        <div className="shehu-board">
+           <HeaderDashboard />
+        </div>
+        
+        <div className='shehu-profileinternal'>
+
+         <div className="shehu-profile-img">
           <img src={study} alt="" />
           <img src={tech} alt="" />
           <img src={study} alt="" />
-        </div>
-        <div className="prof4"> <img src={prof4} alt="" /> </div> 
+         </div>
+         <div className="prof4"> <img src={prof4} alt="" /> </div> 
 
 
           <section className="shehu-prof-text my- px-2 text-center d-md-flex  mx-md-4">
@@ -53,6 +64,9 @@ const Profile = () => {
               With a background in Creative Design, I bring a unique blend of creativity and technical expertise to every project I undertake.
                I am an innovative UI/UX designer who combines both creative and usability.</p>
           </div>
+
+          </div>
+          </section>
     </div>
   )
 }

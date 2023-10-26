@@ -1,0 +1,76 @@
+.shehu-projcetdetails22{
+    padding-top: 100px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.details h3{
+    font-size: 14px;
+}
+
+.details img{
+    width: 40px;
+    height: 40px;
+}
+
+.tex p, .tex span{
+    color: #858585;
+    font-family: var(--Open-Sans);
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.44px;
+}
+
+.tex h3, h6{
+    font-family: var(--Open-Sans);
+}
+
+.shehu-comment input{
+    border: none;
+    color: #4C4D50;
+font-family: Open Sans;
+font-size: 15px;
+font-weight: 600;
+}
+.ico{
+    margin-top:30px
+}
+.shehu-img{
+    width:98%;
+    margin: 0 auto;
+}
+
+.shehu-img img{
+    width:100%;
+}
+
+@media (min-width:760px) {
+    .shehu-projcetdetails22{
+        width: 85%;
+        margin-left: 100px;
+        padding-top: 100px;
+        padding-left: 50px;
+    }
+    
+    .shehu-img{
+        width:100%
+    }
+
+    .shehu-img img{
+        width:98%
+    }
+    
+}
+
+@media (min-width:900px) {
+    .shehu-projcetdetails22{
+        width: 83%;
+        margin-left: 234px;
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+
+    .tex h3{
+        font-size: 23px;
+    }
+}

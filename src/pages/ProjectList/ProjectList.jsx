@@ -8,18 +8,26 @@ import Card from 'react-bootstrap/Card';
 import Heart from 'react-animated-heart'
 import {AiOutlineEye} from 'react-icons/ai'
 import dele from '../../assets/dele.png'
-
+import Sidebar from '../../components/Sidebar'
+import HeaderDashboard from '../../components/HeaderDashboard';
+import { BsHeart} from 'react-icons/bs'
 
 const ProjectList = () => {
   return (
-    <div className='container projectlist'>
+    <div >
 
+<div className="sidebar-shehu">
+      <Sidebar />
+      </div>
+
+<section>
+<div className="shehu-board">
+       <HeaderDashboard />
+        </div>
+
+  <div className='containe projectlist'>
         <div className="d-flex  justify-content-between mx-md-3 my-4 mx-1">
             <h5>project Name</h5>
-            {/* <div className="d-flex gap-1 gap-lg-4">
-                <h5>Share</h5>
-                <Icon icon="bi:box-arrow-up" width="30" height="30" />
-            </div> */}
         </div>
 
   <div className="shehu-list ">
@@ -41,7 +49,7 @@ const ProjectList = () => {
            <div className='d-flex justify-content-between my-1'>
              <p>Uploaded 4hrs ago</p>
             <div className='d-flex'>
-             <div className="art"> <Heart/> </div>
+             <div className="art"> <BsHeart/> </div>
              <Icon icon="bi:eye" width="30" height="30" />
              </div>
         </div>
@@ -52,10 +60,10 @@ const ProjectList = () => {
      <div className="dele">  <img src={dele} alt="" /> </div>
          <div className='shehu-eye'>
          <img src={UI} alt="" /> 
-         <div className='d-flex justify-content-between my-1'>
+         <div className='d-flex justify-content-between my-1 '>
            <p>Uploaded 4hrs ago</p>
-          <div className='d-flex'>
-            <div className="art"> <Heart/> </div>
+          <div className='d-flex '>
+            <div className="art "> <BsHeart/> </div>
              {/* <AiOutlineEye/> */}
              <Icon icon="bi:eye" width="30" height="30" />
            </div>
@@ -70,7 +78,7 @@ const ProjectList = () => {
          <div className='d-flex justify-content-between my-1'>
            <p>Uploaded 4hrs ago</p>
           <div className='d-flex'>
-            <div className="art"> <Heart/> </div>
+            <div className="art"> <BsHeart/> </div>
              {/* <AiOutlineEye/> */}
              <Icon icon="bi:eye" width="30" height="30" />
            </div>
@@ -79,7 +87,9 @@ const ProjectList = () => {
      </section>
 
 </div>
-       
+
+</div>
+</section>
     </div>
   )
 }

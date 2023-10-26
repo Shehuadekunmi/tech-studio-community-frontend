@@ -4,14 +4,28 @@ import edit from '../../assets/edit.png'
 import '../editeProfile/edit.css'
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react';
+import Sidebar from '../../components/Sidebar'
+import HeaderDashboard from '../../components/HeaderDashboard';
 
 const Edit = () => {
   return (
-    <div className='container'>
+    <div className='contain'>
 
-     <div className="d-flex justify-content-between my-2 mt-lg-5">
+<div className="sidebar-shehu">
+      <Sidebar />
+      </div>
+      <section>
+        <div>
+        <div className="shehu-board">
+       <HeaderDashboard />
+        </div>
+        </div>
+
+        <div className="shehu-edit-edit">
+
+     <div className="d-flex justify-content-between shehu-croxx my-2 mt-lg-5">
      <h4 className='ps-4 my- my-lg-1'>Edit Profile</h4>
-     <Link><Icon icon="maki:cross" color="red" width="25" height="25" /> </Link>
+     <Link to={'/profile'}><Icon icon="maki:cross" color="red" width="25" height="25" /> </Link>
       </div> 
 
       <div className="editimg ">
@@ -81,6 +95,8 @@ const Edit = () => {
 
          <div className="link"> <Link className='text-decoration-none link2'><button className='btn btn-primary my-3 my-lg-1 mx-3'>Save Changes</button></Link> </div>
         </form>
+        </div>
+        </section>
     </div>
   )
 }

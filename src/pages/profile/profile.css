@@ -1,3 +1,9 @@
+.shehu-profileinternal{
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
 .prof4 img{
  width: 25%;
  position: relative;
@@ -48,6 +54,12 @@ line-height: normal;
 }
 
 @media (min-width:760px) {
+
+    .shehu-profileinternal{
+        width: 83%;
+        margin-left: 112px;
+        padding-top: 100px;
+    }
     .prof4 img{
         top: -100px;
     }
@@ -62,6 +74,12 @@ line-height: normal;
 }
 
 @media (min-width:900px) {
+    .shehu-profileinternal{
+        width: 83%;
+        margin-left: 232px;
+        padding-top: 170px;
+    }
+
     .shehu-profile-img img{
         width: 40%;
         height: 300px;

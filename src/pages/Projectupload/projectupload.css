@@ -1,6 +1,11 @@
 .shehu-upload{
     margin: 20px 0px;
 }
+.adex{
+    width: 95%;
+    margin: 0 auto;
+padding-top: 100px;
+}
 
 .shehu-link-pub button{
     display: inline-flex;
@@ -127,6 +132,14 @@ text-transform: capitalize;
 }
 
 @media (min-width:760px) {
+    .adex{
+        width: 85%;
+        margin-left: 105px;
+        padding-top: 100px;
+        padding-left: 50px;
+        z-index: 0;
+    }
+
     .shehu-link-pub button{
         position: relative;
         top: 52px;
@@ -134,6 +147,12 @@ text-transform: capitalize;
 }
 
 @media (min-width:900px) {
+
+    .adex{
+        width: 83%;
+    margin-left: 204px;
+    padding-top: 150px;
+    }
 
     .shehu-link-pub button{
        

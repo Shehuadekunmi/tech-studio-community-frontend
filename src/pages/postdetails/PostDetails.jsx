@@ -6,6 +6,9 @@ import { Icon } from '@iconify/react';
 import '../Dashboard/dashboard.css'
 import { Link } from "react-router-dom";
 import Heart from 'react-animated-heart'
+import Sidebar from '../../components/Sidebar'
+import HeaderDashboard from '../../components/HeaderDashboard';
+import '../postdetails/postdetails.css'
 
 const PostDetails = () => {
 
@@ -32,7 +35,16 @@ const PostDetails = () => {
 
   return (
     <div>
+       <div className="sidebar-shehu">
+      <Sidebar />
+      </div>
 
+      <section>
+      <div className="shehu-board">
+       <HeaderDashboard />
+        </div>
+
+        <div className='shehu-projcetdetails22'>   
 <div>
 
     <box-icon name='left-arrow-alt' flip='horizontal' width='48' animation='burst' ></box-icon>
@@ -89,6 +101,9 @@ const PostDetails = () => {
     <h6>Nice work haleemah, great case study.</h6>
   </div>
 </div>
+    
+</div> 
+</section>
     </div>
   )
 }

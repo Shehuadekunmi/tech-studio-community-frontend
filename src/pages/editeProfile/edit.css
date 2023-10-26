@@ -1,3 +1,15 @@
+.shehu-edit-edit{
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.shehu-croxx{
+    width: 100%;
+    margin-left: -10px;
+    padding-bottom: 10px;
+  }
+
 .edit{
     width: 50%;
     margin: 0 auto;
@@ -54,6 +66,17 @@ font-weight: 300;
 }
 
 @media (min-width:760px) {
+    .shehu-edit-edit{
+        width: 85%;
+        margin-left: 115px;
+        padding-top: 100px;
+    }
+
+    .shehu-croxx{
+        width: 90%;
+        margin-left: 15px;
+      }
+
     .edit img{
         width: 50%;
         margin-left: 70px;
@@ -97,4 +120,14 @@ font-weight: 300;
         top: -60px;
         width: 70px;
     }
+
+    .shehu-edit-edit{
+        width: 85%;
+        margin-left: 195px;
+        padding-top: 120px;
+    }
+
+    .shehu-croxx{
+        margin-left: 45px;
+      }
 }

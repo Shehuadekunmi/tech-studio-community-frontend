@@ -169,9 +169,9 @@ const GuestSignUp = () => {
       <div className="guest-sign-up d-flex">
         <div className="frame-3 d-none d-lg-flex align-items-center">
           <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
-            <img src={techstudioLogo} alt="" />
+          <Link to={'/'}>    <img src={techstudioLogo} alt="" />  </Link>
             <div className="brand-container">
-              <img className="img-fluid w-100" src={guestSignUpBanner} alt="" />
+             <img className="img-fluid w-100" src={guestSignUpBanner} alt="" />
             </div>
           </div>
         </div>

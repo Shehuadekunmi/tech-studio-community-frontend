@@ -63,7 +63,7 @@ const FindtalentSec1 = ({ SetJobPosterData }) => {
 
   return (
     <div>
-      <section className="one d-md-flex justify-content-between">
+      <section className="one d-md-flex justify-content-between my-5">
         <div className="text">
           <div>
             <h1 className="py-3">Find the best talents to grow your team</h1>

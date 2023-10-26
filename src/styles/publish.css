@@ -1,19 +1,16 @@
-.background-holder{
+.background2{
   background-color: var(--primary);
   height: 120px;
   padding: 15px;
 }
-.Writeup{
-    padding-left: -20px;
+.workers2{
+    height: 30vh;
 }
-.work{
-    height: 50vh;
-}
-.background-holder img{
+.background2 img{
     height: 50px;
     width: 50px;
 }
-.Writeup h2{
+.Writers2 h2{
     font-family: var(--font-family);
     color: var(--primary);
     font-size: 2rem;
@@ -21,13 +18,13 @@
 letter-spacing: 0.96px;
 text-transform: capitalize;
 }
-.Writeup p{
+.Writers2 p{
     font-family: var(--font-family);
     color: var(--primary);
     font-weight: 400;
     font-size: 1.1rem;
 }
-.Writeup button{
+.Writers2 button{
     background-color:var(--primary);
     border-radius: 10px;
     padding: 5px 33px;
@@ -36,7 +33,7 @@ text-transform: capitalize;
     font-size: 1rem;
     font-weight: 700;
 }
-.Writeup button:hover{
+.Writers2 button:hover{
     cursor: pointer;
     background-color: #0266F4;
     color: var(--bg2);
@@ -49,8 +46,13 @@ text-transform: capitalize;
     color: #4C4D50;
     font-weight: 600;
 }
+.Joke b{
+    font-family: var(--font-family);
+    font-weight: 600;
+    color: #4C4D50;
+}
 @media (min-width:760px) {
-   .work{
+   .worker2{
     width: 500px;
     margin: auto;
     height: 50vh;

@@ -1,0 +1,106 @@
+
+.ImageHolder img{
+    width: 85px;
+    height: 80px;
+}
+.Personal{
+ 
+    margin: auto;
+    z-index: 5;
+}
+.Personal img{
+    width: 70px;
+    height: 70px;
+   margin-top: -50px;
+}
+.Details{
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 9%;
+}
+.Details b,h6{
+    font-family: var(--font-family);
+    color:  #000;
+font-weight: 700;
+font-size: 1rem;
+
+}
+.Details p{
+    font-weight: 400;
+        font-family: var(--font-family);
+            color:  #000;
+font-size: 0.8rem;
+
+}
+.Divided{
+    border-right: 1px solid rgba(0, 0, 0, 0.50);
+        padding-inline: 1rem;
+
+}
+.Lion b{
+font-family: Inter;
+font-size:1.2rem ;
+font-style: normal;
+line-height: 1rem;
+font-weight: 700;
+color:  #000;
+}
+.Lion h5{
+    color: rgba(0, 0, 0, 0.50);
+font-family: Inter;
+font-size:1.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1rem /* 81.818% */
+}
+.Numbers{
+    padding-inline: 1rem;
+}
+.Area input{
+    width: auto;
+    height: 50vh;
+    margin: auto;
+    border-radius: 0.8rem;
+    border: 0.843px solid rgba(0, 0, 0, 0.50);
+outline-color: var(--bg);
+}
+.Area input::placeholder{
+    position: relative;
+    top: -40%;
+    padding-inline: 1rem;
+}
+.Area input:hover{
+    outline-color: var(--bg);
+}
+.Small-input{
+    background-color: var(--bg);
+    width: 100%;
+    margin: auto;
+    height: 180px;
+    padding-block: 10px;
+    border-radius: 1rem;
+}
+.Small-input label{
+    font-weight: 700;
+    font-size: 0.8rem;
+    color:  #000;
+font-family: var(--font-family);
+position: relative;
+left: 13%;
+}
+.Small-input option{
+    font-family: var(--font-family);
+    color: #000;
+}
+.Small-input select{
+    height: 2.2rem;
+    border: 0.843px solid rgba(0, 0, 0, 0.50);
+    outline-color: var(--bg);
+    border-radius: 0.3rem;
+}
+.Key button:hover{
+    background-color: #fff;
+    color: var(--primary);
+    
+}

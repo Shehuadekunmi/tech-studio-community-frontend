@@ -28,11 +28,31 @@
     font-size: 14px;
 }
 
+.shehu-comm{
+    padding-top: 100px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.shehu-card-body{
+    width: 90%;
+    margin: 0 auto;
+}
+
 @media (min-width:760px) {
     .shehu-card-body{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .shehu-comm{
+        width: 85%;
+        margin-left: 115px;
+        padding-top: 100px;
+        padding-left: 50px;
+        z-index: 0;
+      }
+     
 }
 
 
@@ -45,7 +65,10 @@
     }
 
     .shehu-comm{
-        width: 80% !important;
+        width: 83%;
+    margin-left: 234px;
+    padding-top: 150px;
+    padding-left: 50px;
 
     }
 }

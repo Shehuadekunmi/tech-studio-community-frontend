@@ -28,7 +28,10 @@ const Sidebar = () => {
         <section className=' text-white'>
             
             <div className='text-center hom my-2'>
-              <p> <Icon icon="ic:baseline-dashboard" width="30" height="30" className='icon' /> <span className="mx-1"> Dashboard</span> </p>
+           <Link to={'/dashboard'} className="text-decoration-none text-white "> 
+                <p> <Icon icon="ic:baseline-dashboard" width="30" height="30" className='icon' />
+              <span className="mx-1"> Dashboard</span> </p>
+            </Link>
             </div>
 
             <div className='text-center movie  my-2'>
@@ -42,12 +45,15 @@ const Sidebar = () => {
             </div>
 
             <div className='text-center tv  my-2 '>
-              <p> <Icon icon="streamline:mail-send-envelope-envelope-email-message-unopened-sealed-close" width="30" height="30" className='icon'  />
-               <span className="mx-3"> Projects</span>  </p>
+            <Link to={'/projectlist'} className="text-decoration-none text-white " > 
+             <p> <Icon icon="streamline:mail-send-envelope-envelope-email-message-unopened-sealed-close" width="30" height="30" className='icon'  /> 
+              <span className="mx-3"> Projects</span>  </p> 
+              </Link>
             </div>
 
             <div className='text-center up  my-2  '>
-              <p> <Icon icon="mingcute:user-4-line" width="30" height="30" className='icon'  /> <span className="mx-3"> Profile </span></p>
+           <Link to={'/profile'} className="text-decoration-none text-white " >  <p> <Icon icon="mingcute:user-4-line" width="30" height="30" className='icon'  />
+            <span className="mx-3"> Profile </span></p> </Link> 
             </div>
 
             <div className='text-center up  my-2  '>
@@ -71,7 +77,10 @@ const Sidebar = () => {
           </div>
             
             <div className='text-center hom  my-lg-2 my-1'>
-              <p> <Icon icon="ic:baseline-dashboard" width="30" height="30" className='icon' /> <span className="mx-md-1"> Dashboard</span> </p>
+            <Link to={'/dashboard'} className="text-decoration-none text-white "> 
+                <p> <Icon icon="ic:baseline-dashboard" width="30" height="30" className='icon' />
+              <span className="mx-1"> Dashboard</span> </p>
+            </Link>
             </div>
 
             <div className='text-center movie  my-lg-2 my-1'>
@@ -85,12 +94,15 @@ const Sidebar = () => {
             </div>
 
             <div className='text-center tv  my-lg-2  my-1'>
-              <p> <Icon icon="streamline:mail-send-envelope-envelope-email-message-unopened-sealed-close" width="30" height="30" className='icon'  /> <span className="mx-md-3"> Projects</span>  </p>
+            <Link to={'/projectlist'} className="text-decoration-none text-white " > 
+             <p> <Icon icon="streamline:mail-send-envelope-envelope-email-message-unopened-sealed-close" width="30" height="30" className='icon'  /> 
+              <span className="mx-md-3"> Projects</span>  </p> 
+              </Link>
             </div>
 
             <div className='text-center up  my-lg-2   my-1'>
-              <p> <Icon icon="mingcute:user-4-line" width="30" height="30" className='icon'  /> <span className="mx-md-3"> Profile </span></p>
-            </div>
+            <Link to={'/profile'} className="text-decoration-none text-white " >  <p> <Icon icon="mingcute:user-4-line" width="30" height="30" className='icon'  />
+            <span className="mx-3"> Profile </span></p> </Link>            </div>
 
             <div className='text-center up  my-lg-2   my-1'>
               <p><Icon icon="ep:setting" width="30" height="30" className='icon'   /> <span className="mx-md-3">  Settings </span></p>

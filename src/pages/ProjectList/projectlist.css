@@ -1,3 +1,9 @@
+.projectlist{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 70px;
+  } 
+ 
  .projectlist h5{
     color: #000;
 text-align: center;
@@ -34,13 +40,15 @@ text-transform: capitalize;
 }
 
 .art{
-    border: 2px solid darkblue;
+    font-size: 30px;
+    margin: 0 20px;
+    margin-top: -5px;
 }
 
 .dele{
     width: 10%;
     position: relative;
-    left: 260px;
+    left: 240px;
     top: 50px;
 }
 .dele img{
@@ -77,10 +85,15 @@ text-transform: capitalize;
 }
 
 @media (min-width:900px) {
+    .projectlist{
+        width: 80% !important;
+        margin-left: 235px;
+        padding-top: 120px;
+      }
+    
     .dd{
-        /* border: 2px solid darkblue; */
-        height: 320px !important;
-        margin-top: 73px;
+        height: 300px !important;
+        margin-top: 71px;
     }
 
    .shehu-list-icon{
@@ -93,7 +106,7 @@ text-transform: capitalize;
     }
     .dele{
         width: 12%;
-        left: 500px;
+        left: 480px;
         top: 105px;
     }
 
