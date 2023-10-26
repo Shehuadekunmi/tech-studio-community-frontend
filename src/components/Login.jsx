@@ -105,14 +105,16 @@ const Login = () => {
       <div className="login d-flex">
         <div className="frame-1 d-none d-lg-flex align-items-center">
           <div className="container d-flex flex-column justify-content-center align-items-center gap-5">
-            <img src={techstudioLogo} alt="" />
+            <Link to={"/"}>
+              <img src={techstudioLogo} alt="" />
+            </Link>
             <div className="brand-container">
               <img className="img-fluid w-100" src={brandPicture} alt="" />
             </div>
           </div>
         </div>
         <div className="frame-2">
-          <MobileNav/>
+          <MobileNav />
           <div className="d-flex align-items-center">
             <section className="login-content">
               <div className="blue-top w-100"></div>
